@@ -11,6 +11,13 @@ public interface NoticeRepository {
      * @return 저장 후 성공 여부 확인
      */
     boolean save(Notice notice);
+    /**
+     * 공지사항을 수정하는 메소드
+     * @param id 공지사항의 고유 아이디
+     * @param notice 공지사항 내용
+     * @return 수정 후 성공 여부 확인
+     */
+    boolean update(Long id, Notice notice);
 
     /**
      * 공지사항의 고유 아이디를 받아 공지사항을 찾아내는 메소드

@@ -28,6 +28,17 @@ public class MemoryNoticeRepository implements NoticeRepository{
     }
 
     @Override
+    public boolean update(Long id, Notice notice){
+        try {
+            NOTICE_MAP.replace(id, notice);
+            return true;
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        return false;
+    }
+
+    @Override
     public Notice getById(long Id) {
         return NOTICE_MAP.get(Id);
     }

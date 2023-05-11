@@ -29,4 +29,10 @@ public class Notice {
         Emotion = emotion;
         State = state;
     }
+
+    public Notice(String title, String content, int[] noticeRange) {
+        Title = title;
+        Content = content;
+        NoticeRange = noticeRange;
+    }
 }
