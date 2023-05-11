@@ -1,6 +1,6 @@
-package com.example.and_proejct.notice.service;
+package com.fx.and_proejct.notice.service;
 
-import com.example.and_proejct.notice.form.Notice;
+import com.fx.and_proejct.notice.form.Notice;
 
 import java.util.List;
 

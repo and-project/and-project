@@ -1,4 +1,4 @@
-package com.example.and_proejct;
+package KNUT.example.and_proejct;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;

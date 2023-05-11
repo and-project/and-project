@@ -1,6 +1,6 @@
-package com.example.and_proejct.user.repository;
+package com.fx.and_proejct.user.repository;
 
-import com.example.and_proejct.user.form.User;
+import com.fx.and_proejct.user.form.User;
 
 import java.util.List;
 

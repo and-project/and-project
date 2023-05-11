@@ -1,6 +1,6 @@
-package com.example.and_proejct.notice.repository;
+package com.fx.and_proejct.notice.repository;
 
-import com.example.and_proejct.notice.form.Notice;
+import com.fx.and_proejct.notice.form.Notice;
 
 import java.util.List;
 
@@ -10,7 +10,7 @@ public interface NoticeRepository {
      * @param notice 저장할 공지사항
      * @return 저장 후 성공 여부 확인
      */
-    boolean save(Notice notice);
+    boolean save(Notice notice) throws Exception;
 
     /**
      * 공지사항의 고유 아이디를 받아 공지사항을 찾아내는 메소드
@@ -37,11 +37,11 @@ public interface NoticeRepository {
      * @param id 공지사항의 고유 아이디
      * @return 제거 후 성공 여부 확인
      */
-    boolean remove(long id);
+    boolean remove(long id) throws  Exception;
 
     /**
      * 등록된 모든 공지사항을 제거
      * @return 제거 후 성공 여부 확인
      */
-    boolean clear();
+    boolean clear() throws Exception;
 }

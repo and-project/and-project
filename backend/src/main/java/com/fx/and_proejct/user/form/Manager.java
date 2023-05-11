@@ -1,11 +1,11 @@
-package com.example.and_proejct.user.form;
+package com.fx.and_proejct.user.form;
 
 import lombok.Data;
 import lombok.ToString;
 
 @Data
 @ToString
-public class User {
+public class Manager {
     private long AID;
     private String APT;
     private String ID;

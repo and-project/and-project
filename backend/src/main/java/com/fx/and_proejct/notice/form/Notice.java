@@ -1,4 +1,4 @@
-package com.example.and_proejct.notice.form;
+package com.fx.and_proejct.notice.form;
 
 import lombok.Data;
 import lombok.ToString;
