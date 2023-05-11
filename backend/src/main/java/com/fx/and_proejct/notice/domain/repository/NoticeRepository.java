@@ -1,6 +1,6 @@
-package com.fx.and_proejct.notice.repository;
+package com.fx.and_proejct.notice.domain.repository;
 
-import com.fx.and_proejct.notice.form.Notice;
+import com.fx.and_proejct.notice.domain.Notice;
 
 import java.util.List;
 
@@ -10,7 +10,7 @@ public interface NoticeRepository {
      * @param notice 저장할 공지사항
      * @return 저장 후 성공 여부 확인
      */
-    boolean save(Notice notice) throws Exception;
+    boolean save(Notice notice);
 
     /**
      * 공지사항의 고유 아이디를 받아 공지사항을 찾아내는 메소드
@@ -30,18 +30,18 @@ public interface NoticeRepository {
      * @param pagingNumber
      * @return
      */
-    List<Notice> getPagingContent(int pagingNumber);
+    List<Notice> getPagingContent(int pagingNumber, int ContextCountOfPage);
 
     /**
      * 등록된 공지사항을 제거하는 메소드
      * @param id 공지사항의 고유 아이디
      * @return 제거 후 성공 여부 확인
      */
-    boolean remove(long id) throws  Exception;
+    boolean remove(long id);
 
     /**
      * 등록된 모든 공지사항을 제거
      * @return 제거 후 성공 여부 확인
      */
-    boolean clear() throws Exception;
+    boolean clear();
 }

@@ -27,6 +27,17 @@ dependencies {
     developmentOnly 'org.springframework.boot:spring-boot-devtools'
     annotationProcessor 'org.projectlombok:lombok'
     testImplementation 'org.springframework.boot:spring-boot-starter-test'
+
+    compileOnly 'org.projectlombok:lombok:1.18.26'
+    annotationProcessor 'org.projectlombok:lombok:1.18.26'
+
+    testCompileOnly 'org.projectlombok:lombok:1.18.26'
+    testAnnotationProcessor 'org.projectlombok:lombok:1.18.26'
+
+    // JUnit5
+    testImplementation 'org.junit.platform:junit-platform-launcher:1.5.2'
+    testImplementation 'org.junit.jupiter:junit-jupiter:5.5.2'
+
 }
 
 tasks.named('test') {
