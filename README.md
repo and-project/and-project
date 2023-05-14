@@ -15,7 +15,7 @@ npm install -g expo-cli
 cd frontend
 ```
 ```
-npm install
+yarn install
 ```
 ```
 expo start
