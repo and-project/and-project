@@ -28,7 +28,7 @@ public class homeController {
     public Map<String,List<Notice>> home(){
         Map<String,List<Notice>> BoardMap = new HashMap<>();
         List<Notice> contentList = new ArrayList<>();
-        contentList = noticeService.getPagingNotice(1,5);
+        contentList = noticeService.getPagingNotice(1,2);
         BoardMap.put("items",contentList);
         return BoardMap;
     }
