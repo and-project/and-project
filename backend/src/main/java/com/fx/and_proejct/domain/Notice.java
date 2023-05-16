@@ -1,4 +1,4 @@
-package com.fx.and_proejct.notice.domain;
+package com.fx.and_proejct.domain;
 
 import lombok.Data;
 import lombok.ToString;

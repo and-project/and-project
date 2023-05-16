@@ -1,6 +1,6 @@
-package com.fx.and_proejct.notice.domain.repository;
+package com.fx.and_proejct.domain.repository.notice;
 
-import com.fx.and_proejct.notice.domain.Notice;
+import com.fx.and_proejct.domain.Notice;
 import com.fx.and_proejct.utils.DateUtil;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Repository;
