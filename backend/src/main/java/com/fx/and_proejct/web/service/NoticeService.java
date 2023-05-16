@@ -31,7 +31,7 @@ public interface NoticeService {
      * @param notice 공지사항에서 바꿔진 내용
      * @return 변경 후 성공 여부 확인
      */
-    boolean updateNotice(Long id, Notice notice);
+    Notice updateNotice(Long id, Notice notice);
 
     /**
      * 등록된 공지사항을 제거하는 메소드
@@ -41,5 +41,5 @@ public interface NoticeService {
     boolean deleteNotice(long id);
 
 
-    public List<Notice> getPagingNotice(int page,int contentCount);
+    List<Notice> getPagingNotice(int page,int contentCount);
 }

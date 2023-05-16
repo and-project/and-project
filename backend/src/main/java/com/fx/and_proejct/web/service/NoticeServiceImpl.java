@@ -19,12 +19,12 @@ public class NoticeServiceImpl implements NoticeService{
 
     @Override
     public Notice findNotice(long id) {
-        return null;
+        return noticeRepository.getById(id);
     }
 
     @Override
     public List<Notice> findAll() {
-        return null;
+        return noticeRepository.getAll();
     }
 
     @Override
@@ -33,13 +33,13 @@ public class NoticeServiceImpl implements NoticeService{
     }
 
     @Override
-    public boolean updateNotice(Long id, Notice notice) {
-        return false;
+    public Notice updateNotice(Long id, Notice notice) {
+        return noticeRepository.update(id,notice);
     }
 
     @Override
     public boolean deleteNotice(long id) {
-        return false;
+        return noticeRepository.remove(id);
     }
 
     public List<Notice> getPagingNotice(int page,int contentCount){
