@@ -39,6 +39,8 @@ public interface NoticeRepository {
      */
     boolean remove(long id);
 
+    Notice update(long id, Notice notice);
+
     /**
      * 등록된 모든 공지사항을 제거
      * @return 제거 후 성공 여부 확인

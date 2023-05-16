@@ -1,4 +1,4 @@
-package com.fx.and_proejct.notice.service;
+package com.fx.and_proejct.web.service;
 
 import com.fx.and_proejct.notice.domain.Notice;
 
@@ -10,7 +10,7 @@ public interface NoticeService {
      * @param id 공지사항의 고유 아이디
      * @return 찾아낸 공지사항 반환
      */
-    Notice findNotice(long id);
+    Notice  findNotice(long id);
 
     /**
      * 모든 공지사항 찾아내는 메소드
@@ -31,7 +31,7 @@ public interface NoticeService {
      * @param notice 공지사항에서 바꿔진 내용
      * @return 변경 후 성공 여부 확인
      */
-    boolean updateNotice(Long id, Notice notice);
+    Notice updateNotice(Long id, Notice notice);
 
     /**
      * 등록된 공지사항을 제거하는 메소드
@@ -39,4 +39,7 @@ public interface NoticeService {
      * @return 제거 후 성공 여부 확인
      */
     boolean deleteNotice(long id);
+
+
+    List<Notice> getPagingNotice(int page,int contentCount);
 }
