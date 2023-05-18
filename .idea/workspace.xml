@@ -1,0 +1,155 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="df334bc4-e26c-47dd-a618-bd855c598b6e" name="변경" comment="">
+      <change beforePath="$PROJECT_DIR$/backend/src/main/java/com/fx/and_proejct/notice/domain/Notice.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/com/fx/and_proejct/domain/Notice.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/src/main/java/com/fx/and_proejct/notice/domain/repository/MemoryNoticeRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/com/fx/and_proejct/domain/repository/notice/MemoryNoticeRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/src/main/java/com/fx/and_proejct/notice/domain/repository/NoticeRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/com/fx/and_proejct/domain/repository/notice/NoticeRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/src/main/java/com/fx/and_proejct/user/repository/UserRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/com/fx/and_proejct/domain/repository/user/UserRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/src/main/java/com/fx/and_proejct/web/controller/homeController.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/com/fx/and_proejct/web/controller/homeController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/src/main/java/com/fx/and_proejct/web/service/NoticeService.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/com/fx/and_proejct/web/service/NoticeService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/src/main/java/com/fx/and_proejct/web/service/NoticeServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/com/fx/and_proejct/web/service/NoticeServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/src/test/java/com/fx/and_proejct/notice/domain/repository/MemoryNoticeRepositoryTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/test/java/com/fx/and_proejct/domain/repository/MemoryNoticeRepositoryTest.java" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="ExternalProjectsData">
+    <projectState path="$PROJECT_DIR$/backend">
+      <ProjectState />
+    </projectState>
+  </component>
+  <component name="ExternalProjectsManager">
+    <system id="GRADLE">
+      <state>
+        <projects_view>
+          <tree_state>
+            <expand />
+            <select />
+          </tree_state>
+        </projects_view>
+      </state>
+    </system>
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="JUnit5 Test Class" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
+  </component>
+  <component name="ProjectId" id="2Poze85lFYBuuyHhSD8jn6WW7dK" />
+  <component name="ProjectLevelVcsManager">
+    <ConfirmationsSetting value="1" id="Add" />
+  </component>
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "WebServerToolWindowFactoryState": "false",
+    "com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary": "JUnit5",
+    "com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit5": "",
+    "last_opened_file_path": "/Users/min/Desktop/git/and-project",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "project.structure.last.edited": "모듈",
+    "project.structure.proportion": "0.0",
+    "project.structure.side.proportion": "0.0",
+    "settings.editor.selected.configurable": "advanced.settings",
+    "spring.configuration.checksum": "8115bc5ad06621127c94942e0910a26f",
+    "vue.rearranger.settings.migration": "true"
+  }
+}]]></component>
+  <component name="RecentsManager">
+    <key name="CreateTestDialog.Recents.Supers">
+      <recent name="" />
+    </key>
+    <key name="CreateTestDialog.RecentsKey">
+      <recent name="com.fx.and_proejct.web.service" />
+    </key>
+  </component>
+  <component name="RunManager" selected="Gradle.NoticeServiceImplTest.addNotice">
+    <configuration name="NoticeServiceImplTest.addNotice" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+      <ExternalSystemSettings>
+        <option name="executionName" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$/backend" />
+        <option name="externalSystemIdString" value="GRADLE" />
+        <option name="scriptParameters" value="" />
+        <option name="taskDescriptions">
+          <list />
+        </option>
+        <option name="taskNames">
+          <list>
+            <option value=":test" />
+            <option value="--tests" />
+            <option value="&quot;com.fx.and_proejct.web.service.NoticeServiceImplTest.addNotice&quot;" />
+          </list>
+        </option>
+        <option name="vmOptions" />
+      </ExternalSystemSettings>
+      <ExternalSystemDebugServerProcess>false</ExternalSystemDebugServerProcess>
+      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
+      <DebugAllEnabled>false</DebugAllEnabled>
+      <method v="2" />
+    </configuration>
+    <configuration default="true" type="JetRunConfigurationType">
+      <module name="and-project" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration default="true" type="KotlinStandaloneScriptRunConfigurationType">
+      <module name="and-project" />
+      <option name="filePath" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="BackendApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" nameIsGenerated="true">
+      <module name="and_proejct.main" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.fx.and_proejct.BackendApplication" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Gradle.NoticeServiceImplTest.addNotice" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="애플리케이션 수준" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="디폴트 작업">
+      <changelist id="df334bc4-e26c-47dd-a618-bd855c598b6e" name="변경" comment="" />
+      <created>1684138314638</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1684138314638</updated>
+      <workItem from="1684138315946" duration="173000" />
+      <workItem from="1684140095060" duration="550000" />
+      <workItem from="1684220146291" duration="1653000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+</project>

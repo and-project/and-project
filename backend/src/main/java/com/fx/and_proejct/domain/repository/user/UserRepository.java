@@ -1,4 +1,4 @@
-package com.fx.and_proejct.user.repository;
+package com.fx.and_proejct.domain.repository.user;
 
 import com.fx.and_proejct.web.form.User;
 

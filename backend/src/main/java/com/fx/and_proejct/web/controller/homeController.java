@@ -1,6 +1,6 @@
 package com.fx.and_proejct.web.controller;
 
-import com.fx.and_proejct.notice.domain.Notice;
+import com.fx.and_proejct.domain.Notice;
 import com.fx.and_proejct.utils.DateUtil;
 import com.fx.and_proejct.web.service.NoticeService;
 import lombok.RequiredArgsConstructor;

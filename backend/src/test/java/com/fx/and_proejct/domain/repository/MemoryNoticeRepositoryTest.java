@@ -1,6 +1,7 @@
-package com.fx.and_proejct.notice.domain.repository;
+package com.fx.and_proejct.domain.repository;
 
-import com.fx.and_proejct.notice.domain.Notice;
+import com.fx.and_proejct.domain.Notice;
+import com.fx.and_proejct.domain.repository.notice.NoticeRepository;
 import com.fx.and_proejct.utils.DateUtil;
 import lombok.extern.slf4j.Slf4j;
 import org.assertj.core.api.Assertions;
@@ -11,7 +12,6 @@ import org.springframework.boot.test.context.SpringBootTest;
 
 import javax.annotation.PostConstruct;
 import java.util.List;
-import java.util.NoSuchElementException;
 
 
 @Slf4j

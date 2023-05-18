@@ -1,7 +1,7 @@
 package com.fx.and_proejct.web.service;
 
-import com.fx.and_proejct.notice.domain.Notice;
-import com.fx.and_proejct.notice.domain.repository.NoticeRepository;
+import com.fx.and_proejct.domain.Notice;
+import com.fx.and_proejct.domain.repository.notice.NoticeRepository;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;

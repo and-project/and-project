@@ -1,6 +1,6 @@
-package com.fx.and_proejct.notice.domain.repository;
+package com.fx.and_proejct.domain.repository.notice;
 
-import com.fx.and_proejct.notice.domain.Notice;
+import com.fx.and_proejct.domain.Notice;
 
 import java.util.List;
 
