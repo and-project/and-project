@@ -22,14 +22,14 @@ public class homeController {
 
     private final NoticeService noticeService;
 
-    @GetMapping("/{page}/{contentCount}")
+    @GetMapping( value = {"/{page}","/{page}/{contentCount}"})
     public Map<String,List<Notice>> home(@PathVariable int page, @PathVariable(required = false) Integer contentCount){
-
+        log.info("in home Controller");
         Map<String,List<Notice>> BoardMap = new HashMap<>();
         List<Notice> contentList = new ArrayList<>();
 
         int count = (contentCount == null) ? 10 : contentCount;
-
+        log.info("{}",count);
         contentList = noticeService.getPagingNotice(page, count);
         BoardMap.put("items",contentList);
         return BoardMap;
