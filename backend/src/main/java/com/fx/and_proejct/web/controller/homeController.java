@@ -23,7 +23,8 @@ public class homeController {
     private final NoticeService noticeService;
 
     @GetMapping("/{page}/{contentCount}")
-    public Map<String,List<Notice>> home(@PathVariable int page, @PathVariable(required = false) Integer contentCount, BindingResult bindingResult){
+    public Map<String,List<Notice>> home(@PathVariable int page, @PathVariable(required = false) Integer contentCount){
+
         Map<String,List<Notice>> BoardMap = new HashMap<>();
         List<Notice> contentList = new ArrayList<>();
 
