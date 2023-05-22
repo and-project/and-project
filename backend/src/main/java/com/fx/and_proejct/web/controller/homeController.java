@@ -5,15 +5,14 @@ import com.fx.and_proejct.utils.DateUtil;
 import com.fx.and_proejct.web.service.NoticeService;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
+import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import javax.annotation.PostConstruct;
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
+import java.util.*;
 
 @Slf4j
 @RestController
@@ -23,32 +22,26 @@ public class homeController {
 
     private final NoticeService noticeService;
 
-    @GetMapping
-    public Map<String,List<Notice>> home(){
+    @GetMapping("/{page}/{contentCount}")
+    public Map<String,List<Notice>> home(@PathVariable int page, @PathVariable(required = false) Integer contentCount, BindingResult bindingResult){
         Map<String,List<Notice>> BoardMap = new HashMap<>();
         List<Notice> contentList = new ArrayList<>();
-        contentList = noticeService.getPagingNotice(1,2);
+
+        int count = (contentCount == null) ? 10 : contentCount;
+
+        contentList = noticeService.getPagingNotice(page, count);
         BoardMap.put("items",contentList);
         return BoardMap;
     }
 
-
     @PostConstruct
     public void setTestNotice(){
         int[] noticeRange = {107,108};
-        Notice noticeA = new Notice("test title","test Body", DateUtil.getNow(),noticeRange,false,null,null,true);
-        noticeService.addNotice(noticeA);
-        Notice noticeB = new Notice("test title","test Body", DateUtil.getNow(),noticeRange,false,null,null,true);
-        noticeService.addNotice(noticeB);
-        Notice noticeC = new Notice("test title","test Body", DateUtil.getNow(),noticeRange,false,null,null,true);
-        noticeService.addNotice(noticeC);
-        Notice noticeD = new Notice("test title","test Body", DateUtil.getNow(),noticeRange,false,null,null,true);
-        noticeService.addNotice(noticeD);
-        Notice noticeE = new Notice("test title","test Body", DateUtil.getNow(),noticeRange,false,null,null,true);
-        noticeService.addNotice(noticeE);
-        Notice noticeF = new Notice("test title","test Body", DateUtil.getNow(),noticeRange,false,null,null,true);
-        noticeService.addNotice(noticeF);
 
+        for(int i = 0; i < 20; i++){
+            Notice notice = new Notice("test title" + i,"test Body" + i, DateUtil.getNow(),noticeRange,false,null,null,true);
+            noticeService.addNotice(notice);
+        }
     }
 
 }
