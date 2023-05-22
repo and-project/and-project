@@ -1,50 +1,31 @@
-import { useState, useEffect } from "react";
-import InfiniteScroll from "react-infinite-scroll-component";
-import styles from "./_home.scss";
-import Nav from "./Nav";
-import Remocon from "../Remocon/Remocon";
+import React, { useEffect, useState, useRef } from "react";
+import NoticePage from "./NoticePage";
 
-interface items {
-  id: string;
-  name: string;
-}
+const Home = () => {
+  const intersectingRef = useRef<HTMLDivElement>(null);
+  const [isIntersecting, setIsIntersecting] = useState(false);
 
-function Home() {
-  const [items, setItems] = useState([]);
-  const [dataLength, setDataLength] = useState(0);
+  const handleIntersecting = () => {
+    setIsIntersecting(true);
+  };
+
   useEffect(() => {
-    // 데이터를 로드합니다.
-    fetch("/api/home")
-      .then((response) => response.text())
-      .then((items) => {
-        setItems(items);
-        setDataLength(items.length);
-      });
-  }, []);
+    if (isIntersecting) {
+      // 추가 로직 작성
+    }
+  }, [isIntersecting]);
 
   return (
     <div>
-      <header
-        style={{
-          position: "relative",
-          display: "flex",
-          justifyContent: "space-between",
-        }}
-      >
+      <header>
         <h1>오이오이</h1>
-        <Nav />
       </header>
 
-      <Remocon />
-      <InfiniteScroll
-        next={() =>
-          fetch("/api/home").then((response) => response.json())
-        }
-        dataLength={dataLength}
-        renderItem={(item: items) => <div key={item.id}>{item.name}</div>}
-      />
+      {/* <Remocon /> */}
+      {/* 썸네일에 넣어야할 요소들 */}
+      <NoticePage ref={intersectingRef} onIntersecting={handleIntersecting} />
     </div>
   );
-}
+};
 
 export default Home;
