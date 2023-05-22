@@ -20,9 +20,9 @@ public class MemoryNoticeRepository implements NoticeRepository{
 
         // try catch 를 사용하면 죽은 코드임
         Long NID = ++sequence;
-        notice.setNID(NID);
+        notice.setId(NID);
         NOTICE_MAP.put(NID, notice);
-        return notice.getNID() == NID;
+        return notice.getId() == NID;
     }
 
     @Override
@@ -62,7 +62,7 @@ public class MemoryNoticeRepository implements NoticeRepository{
     public Notice update(long id, Notice notice) {
         Notice updateNotice = new Notice();
         copyToNotice(notice, updateNotice);
-        updateNotice.setNID(id);
+        updateNotice.setId(id);
         NOTICE_MAP.put(id,updateNotice);
         return NOTICE_MAP.get(id);
     }
