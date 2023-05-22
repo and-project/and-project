@@ -13,7 +13,7 @@ import javax.servlet.Filter;
 public class WebConfig {
 
     @Bean
-    public FilterRegistrationBean CORSFilter(){
+    public FilterRegistrationBean corsSetFilter(){
         FilterRegistrationBean<Filter> filterRegistrationBean = new FilterRegistrationBean<>();
         filterRegistrationBean.setFilter(new CORSFilter());
         filterRegistrationBean.setOrder(0);
