@@ -4,14 +4,21 @@ import lombok.Data;
 import lombok.ToString;
 
 @Data
-@ToString
 public class User {
 
-    private long AID;
-    private String APT;
-    private String ID;
-    private String PW;
-    private String Nick;
-    private String AccountCreationTime;
+    private long id;
+    private String apart;
+    private String loginId;
+    private String pw;
+    private String nick;
+    private String creationTime;
+    private UserType userType;
 
+    public User() {
+    }
+
+    public User(String loginId, String pw) {
+        this.loginId = loginId;
+        this.pw = pw;
+    }
 }
