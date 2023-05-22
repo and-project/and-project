@@ -11,7 +11,6 @@ import org.springframework.boot.test.context.SpringBootTest;
 
 import javax.annotation.PostConstruct;
 import java.util.List;
-import java.util.NoSuchElementException;
 
 
 @Slf4j
@@ -31,10 +30,10 @@ class MemoryNoticeRepositoryTest {
         int[] noticeRange = {107,108};
         Notice notice = new Notice("test title","test Body", DateUtil.getNow(),noticeRange,false,null,null,true);
         noticeRepository.save(notice);
-        Long nid = notice.getNID();
+        Long nid = notice.getId();
         Notice result = noticeRepository.getById(nid);
         log.info("find notice = {}", result);
-        Assertions.assertThat(result.getNID()).isEqualTo(nid);
+        Assertions.assertThat(result.getId()).isEqualTo(nid);
     }
 
     @Test
