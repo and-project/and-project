@@ -23,7 +23,6 @@ public class homeController {
 
     private final NoticeService noticeService;
 
-
     @GetMapping
     public Map<String,List<Notice>> home(){
         Map<String,List<Notice>> BoardMap = new HashMap<>();
