@@ -54,7 +54,8 @@ export default class LoadingPage extends React.Component{
         <MaskedView style={{flex:1}} maskElement={
           <View style={styles.centered}>
             <Animated.Image 
-              source={require('../../../assets/favicon.png')} 
+              source={require('../../../assets/favicon.png')}
+              // 메인 사진 들어갈 곳
               style={[{ width: 1000 }, imageScale]}
               resizeMode="contain"
               />
@@ -64,6 +65,7 @@ export default class LoadingPage extends React.Component{
           {whiteLayer}
           <Animated.View style = {[opacity, styles.centered]}>
             <Animated.Image source={splash}/>
+            {/* 메인사진 들어갈 곳 */}
           </Animated.View>
 
         </MaskedView>
