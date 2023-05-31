@@ -1,4 +1,4 @@
-import React, {useState, useEffect} from 'react';
+import React, {useState, useEffect, useRef} from 'react';
 import {Text, View, StyleSheet, SafeAreaView, TouchableOpacity} from 'react-native';
 import {WebView} from 'react-native-webview';
 import LoadingPage from '../pages/LoadingPage';
@@ -8,6 +8,7 @@ import favicon from '../../../assets/favicon.png';
 import splash from '../../../assets/splash.png'
 import { widthPercentageToDP as wp, heightPercentageToDP as hp } from 'react-native-responsive-screen';
 import { Feather } from '@expo/vector-icons';
+import { DrawerLayoutAndroid } from 'react-native';
 
 
 export default function MainPage() {
@@ -30,7 +31,7 @@ export default function MainPage() {
 
 
 
-  return ready ? <LoadingPage/> : (
+  return ready ? <LoadingPage/> : (    
 
     <SafeAreaView>
 
@@ -57,6 +58,7 @@ export default function MainPage() {
       </View>
 
     </SafeAreaView>
+    
 
       // <WebView
       //   style={styles.container}
