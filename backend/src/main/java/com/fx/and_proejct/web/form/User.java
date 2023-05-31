@@ -1,7 +1,6 @@
 package com.fx.and_proejct.web.form;
 
 import lombok.Data;
-import lombok.ToString;
 
 @Data
 public class User {
@@ -12,7 +11,7 @@ public class User {
     private String pw;
     private String nick;
     private String creationTime;
-    private UserType userType;
+    private UseRole useRole;
 
     public User() {
     }
