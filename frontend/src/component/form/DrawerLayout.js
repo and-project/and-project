@@ -1,64 +1,132 @@
-import React, {useRef, useState} from 'react';
-import {
-  Button,
-  DrawerLayoutAndroid,
-  Text,
-  StyleSheet,
-  View,
-} from 'react-native';
+import React from 'react'
+import {View, Text, SafeAreaView, TouchableOpacity, StyleSheet} from 'react-native'
+import { MaterialIcons} from '@expo/vector-icons';
+import { Entypo } from '@expo/vector-icons';
+import { MaterialCommunityIcons } from '@expo/vector-icons';
 
-const DrawerLayout = () => {
-  const drawer = useRef<DrawerLayoutAndroid>(null);
-  const [drawerPosition, setDrawerPosition] = useState('left');
-  const navigationView = () => (
-    <View style={[styles.container, styles.navigationContainer]}>
-      <Text style={styles.paragraph}>I'm in the Drawer!</Text>
-      <Button
-        title="Close drawer"
-        onPress={() => drawer.current?.closeDrawer()}
-      />
-    </View>
-  );
 
+export default function DrawerLayout() {
   return (
-    <DrawerLayoutAndroid
-      ref={drawer}
-      drawerWidth={300}
-      drawerPosition={drawerPosition}
-      renderNavigationView={navigationView}>
-      <View style={styles.container}>
-        <Text style={styles.paragraph}>Drawer on the {drawerPosition}!</Text>
-        <Button
-          title="Change Drawer Position"
-          onPress={() => changeDrawerPosition()}
-        />
-        <Text style={styles.paragraph}>
-          Swipe from the side or press button below to see it!
-        </Text>
-        <Button
-          title="Open drawer"
-          onPress={() => drawer.current?.openDrawer()}
-        />
+    <SafeAreaView style={{ flex: 1, borderWidth: 1, width: 350 }}>
+      <View
+        style={{
+          borderWidth: 1,
+          height: 100,
+          marginTop: 10,
+          flexDirection: "row",
+          alignItems: "center",
+          justifyContent: "space-around",
+        }}
+      >
+        <TouchableOpacity style={styles.signInButton}>
+          <Text>로그인</Text>
+        </TouchableOpacity>
+        <TouchableOpacity style={styles.signInButton}>
+          <Text>회원가입</Text>
+        </TouchableOpacity>
       </View>
-    </DrawerLayoutAndroid>
+
+      <View style={{ flex: 3, borderWidth: 1, alignItems: "center" }}>
+        <View style={{justifyContent:'center', alignItems:'center'}}>
+          <Text style = {{fontSize:15, marginTop:10, borderWidth:1,}}>일반기능</Text>
+        </View>
+
+        <View
+          style={{
+            flexDirection: "row",
+            borderWidth: 1,
+            justifyContent: "space-around",
+            alignItems: "center",
+            marginTop: 30,
+            height: 70,
+            width: 350,
+          }}
+        >
+          <TouchableOpacity style={styles.cateButton}>
+            <MaterialIcons name="announcement" size={20} color="black" />
+            <Text>공지</Text>
+          </TouchableOpacity>
+
+          <TouchableOpacity style={styles.cateButton}>
+            <MaterialIcons name="how-to-vote" size={20} color="black" />
+            <Text>투표</Text>
+          </TouchableOpacity>
+
+          <TouchableOpacity style={styles.cateButton}>
+            <Entypo name="slideshare" size={20} color="black" />
+            <Text>나눔&구매</Text>
+          </TouchableOpacity>
+
+          <TouchableOpacity style={styles.cateButton}>
+            <MaterialCommunityIcons
+              name="bulletin-board"
+              size={20}
+              color="black"
+            />
+            <Text>자유게시판</Text>
+          </TouchableOpacity>
+        </View>
+      </View>
+
+      <View style={{ flex: 4, borderWidth: 1, backgroundColor: "gray" }}>
+
+      <View
+          style={{
+            flexDirection: "row",
+            borderWidth: 1,
+            justifyContent: "space-around",
+            alignItems: "center",
+            marginTop: 30,
+            height: 70,
+            width: 350,
+          }}
+        >
+          <TouchableOpacity style={styles.cateButton}>
+            <MaterialIcons name="announcement" size={20} color="black" />
+            <Text>공지</Text>
+          </TouchableOpacity>
+
+          <TouchableOpacity style={styles.cateButton}>
+            <MaterialIcons name="how-to-vote" size={20} color="black" />
+            <Text>투표</Text>
+          </TouchableOpacity>
+
+          <TouchableOpacity style={styles.cateButton}>
+            <Entypo name="slideshare" size={20} color="black" />
+            <Text>나눔&구매</Text>
+          </TouchableOpacity>
+
+          <TouchableOpacity style={styles.cateButton}>
+            <MaterialCommunityIcons
+              name="bulletin-board"
+              size={20}
+              color="black"
+            />
+            <Text>자유게시판</Text>
+          </TouchableOpacity>
+        </View>
+      </View>
+    </SafeAreaView>
   );
-};
+}
+
 
 const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    alignItems: 'center',
+  signInButton : {
+    borderWidth: 1,
+    height: 50,
+    width: 120,
+    borderRadius: 20,
     justifyContent: 'center',
-    padding: 16,
+    alignItems: 'center'
   },
-  navigationContainer: {
-    backgroundColor: '#ecf0f1',
-  },
-  paragraph: {
-    padding: 16,
-    fontSize: 15,
-    textAlign: 'center',
-  },
-});
 
-export default DrawerLayout;
+  cateButton: {
+    borderWidth:1,
+    height: 60,
+    width: 75,
+    borderRadius: 20,
+    justifyContent: 'center',
+    alignItems: 'center'
+  }
+})

@@ -6,9 +6,9 @@ import DrawerLayout from './src/component/form/DrawerLayout';
 
 export default function App() {
   return (
-    // <MainPage/>
+    <MainPage/>
     // <LoadingPage/>
-    <DrawerLayout/>
+    // <DrawerLayout/>
   );
 }
 

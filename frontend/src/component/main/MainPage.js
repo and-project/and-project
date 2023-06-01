@@ -1,5 +1,5 @@
 import React, {useState, useEffect, useRef} from 'react';
-import {Text, View, StyleSheet, SafeAreaView, TouchableOpacity} from 'react-native';
+import {Text, View, StyleSheet, SafeAreaView, TouchableOpacity, DrawerLayoutAndroid, Button} from 'react-native';
 import {WebView} from 'react-native-webview';
 import LoadingPage from '../pages/LoadingPage';
 import {SliderBox} from 'react-native-image-slider-box';
@@ -8,16 +8,21 @@ import favicon from '../../../assets/favicon.png';
 import splash from '../../../assets/splash.png'
 import { widthPercentageToDP as wp, heightPercentageToDP as hp } from 'react-native-responsive-screen';
 import { Feather } from '@expo/vector-icons';
-import { DrawerLayoutAndroid } from 'react-native';
+import DrawerLayout from '../form/DrawerLayout';
 
 
 export default function MainPage() {
+
+  
+
 //아파트 메인사진 들어갈 곳
   const img = [
     require('../../../assets/icon.png'),
     require('../../../assets/favicon.png'),
     require('../../../assets/splash.png'),
   ];
+
+  
 
 
 
@@ -29,9 +34,28 @@ export default function MainPage() {
     }, 3000)
   })
 
+  const drawer = useRef(null);
+  const [drawerPosition, setDrawerPosition] = useState('')
+  
 
 
-  return ready ? <LoadingPage/> : (    
+  const navigationView = () => (
+    <View style={styles.container}>
+      <DrawerLayout/>
+     
+    </View>
+  );
+
+  
+
+
+  return ready ? <LoadingPage/> : (  
+    <DrawerLayoutAndroid
+      ref = {drawer}
+      drawerWidth={350}
+      drawerPosition={'right'}
+      renderNavigationView={navigationView}>
+      
 
     <SafeAreaView>
 
@@ -50,14 +74,15 @@ export default function MainPage() {
           <Text style={{fontSize: 20,}}>아파트 입주민 커뮤니티</Text>
         </View>
 
-        <TouchableOpacity>
-          <View style={{justifyContent:'space-between', marginRight:10,}}>
+        <TouchableOpacity onPress={() => drawer.current?.openDrawer()}>
+          <View style={{marginRight:10,}}>
             <Feather name="menu" size={24} color="black" />
           </View>
         </TouchableOpacity>
       </View>
 
     </SafeAreaView>
+    </DrawerLayoutAndroid>
     
 
       // <WebView
@@ -75,4 +100,17 @@ export default function MainPage() {
 // })
 
 
+
+const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+    alignItems: 'center',
+    justifyContent: 'center',
+    padding: 0,
+  },
+  // navigationContainer: {
+  //   backgroundColor: 'red',
+  // },
+
+});
 
