@@ -39,7 +39,7 @@ public class homeController {
     public void setTestNotice(){
         int[] noticeRange = {107,108};
 
-        for(int i = 0; i < 20; i++){
+        for(int i = 1; i <= 20; i++){
             Notice notice = new Notice("test title" + i,"test Body" + i, DateUtil.getNow(),noticeRange,false,null,null,true);
             noticeService.addNotice(notice);
         }
