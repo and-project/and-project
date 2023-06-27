@@ -20,10 +20,23 @@ public class NoticeController {
 
     private final NoticeService noticeService;
 
+    @GetMapping(value = {"/list/{page}","/list/{page}/{contentCount}"})
+    public Map<String,List<Notice>> home(@PathVariable int page, @PathVariable(required = false) Integer contentCount){
+
+        Map<String,List<Notice>> BoardMap = new HashMap<>();
+
+        List<Notice> contentList = new ArrayList<>();
+
+        int count = (contentCount == null) ? 10 : contentCount;
+
+        contentList = noticeService.getPagingNotice(page, count);
+        BoardMap.put("items",contentList);
+        return BoardMap;
+    }
+
     // Read
     @GetMapping("/{noticeId}")
     public Notice getNotice(@PathVariable long noticeId){
-        log.info("get Notice");
         return noticeService.findNotice(noticeId);
     }
 

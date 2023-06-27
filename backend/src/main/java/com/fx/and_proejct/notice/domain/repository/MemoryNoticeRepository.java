@@ -26,8 +26,8 @@ public class MemoryNoticeRepository implements NoticeRepository{
     }
 
     @Override
-    public Notice getById(long Id) {
-        return NOTICE_MAP.get(Id);
+    public Optional<Notice> getById(long Id) {
+        return Optional.ofNullable(NOTICE_MAP.get(Id));
     }
 
     @Override

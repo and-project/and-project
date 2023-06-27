@@ -14,7 +14,7 @@ public class Notice {
     private String Title;
     private String Content;
     private LocalDateTime CreationTime;
-    private int[] NoticeRange;
+    private String[] NoticeRange;
     private boolean Pin;
     private String tag;
     private String Emotion;
@@ -22,7 +22,7 @@ public class Notice {
 
     public Notice() {}
 
-    public Notice(String title, String content, LocalDateTime creationTime, int[] noticeRange, boolean pin, String tag, String emotion, boolean state) {
+    public Notice(String title, String content, LocalDateTime creationTime, String[] noticeRange, boolean pin, String tag, String emotion, boolean state) {
         Title = title;
         Content = content;
         CreationTime = creationTime;

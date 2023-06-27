@@ -22,7 +22,7 @@ public class homeController {
 
     private final NoticeService noticeService;
 
-    @GetMapping( value = {"/{page}","/{page}/{contentCount}"})
+    @GetMapping(value = {"/{page}","/{page}/{contentCount}"})
     public Map<String,List<Notice>> home(@PathVariable int page, @PathVariable(required = false) Integer contentCount){
         log.info("in home Controller");
         Map<String,List<Notice>> BoardMap = new HashMap<>();
@@ -37,7 +37,7 @@ public class homeController {
 
     @PostConstruct
     public void setTestNotice(){
-        int[] noticeRange = {107,108};
+        String[] noticeRange = {"107","108"};
 
         for(int i = 1; i <= 20; i++){
             Notice notice = new Notice("test title" + i,"test Body" + i, DateUtil.getNow(),noticeRange,false,null,null,true);

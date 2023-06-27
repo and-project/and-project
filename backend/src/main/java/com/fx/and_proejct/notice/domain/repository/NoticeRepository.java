@@ -3,6 +3,7 @@ package com.fx.and_proejct.notice.domain.repository;
 import com.fx.and_proejct.notice.domain.Notice;
 
 import java.util.List;
+import java.util.Optional;
 
 public interface NoticeRepository {
     /**
@@ -17,7 +18,7 @@ public interface NoticeRepository {
      * @param Id 공지사항의 고유 아이디
      * @return 찾아낸 공지사항 반환
      */
-    Notice getById(long Id);
+    Optional<Notice> getById(long Id);
 
     /**
      * 모든 공지사항을 반환하는 메소드
