@@ -23,9 +23,6 @@ export default function MainPage() {
   ];
 
   
-
-
-
   const [ready, setReady] = useState(true)
 
   useEffect(()=>{
@@ -36,8 +33,6 @@ export default function MainPage() {
 
   const drawer = useRef(null);
   const [drawerPosition, setDrawerPosition] = useState('')
-  
-
 
   const navigationView = () => (
     <View style={styles.container}>
@@ -81,23 +76,23 @@ export default function MainPage() {
         </TouchableOpacity>
       </View>
 
+      <View style = {{borderWidth:1, height:265,}}>
+        <Text>asdasd</Text>
+      </View>
+
+      <View style = {{height:290,}}>
+        <View style = {{borderBottomWidth:1, height: 35, justifyContent:'center', backgroundColor:'lightgray'}}>
+          <Text style = {{fontSize:17, paddingLeft:10,}}>아파트 소식</Text>
+        </View>
+        <Text>asdasd</Text>
+      </View>
     </SafeAreaView>
     </DrawerLayoutAndroid>
     
-
-      // <WebView
-      //   style={styles.container}
-      //   source={{ uri: 'https://expo.dev' }}
-      //   // web주소 받아올 곳
-      // />
     );
   }
 
-// const styles = StyleSheet.create({
-//   container : {
-//     flex:1,
-//   }
-// })
+
 
 
 
@@ -108,9 +103,5 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
     padding: 0,
   },
-  // navigationContainer: {
-  //   backgroundColor: 'red',
-  // },
-
 });
 

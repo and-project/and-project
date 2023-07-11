@@ -1,10 +1,10 @@
 import React from 'react'
 import {View, Text, SafeAreaView, TouchableOpacity, StyleSheet} from 'react-native'
-import { MaterialCommunityIcons, MaterialIcons, Entypo } from '@expo/vector-icons';
+import { MaterialCommunityIcons, MaterialIcons, Entypo, FontAwesome5 } from '@expo/vector-icons';
 
 export default function DrawerLayout() {
   return (
-    <SafeAreaView style={{ flex: 1, borderWidth: 1, width: 350 }}>
+    <SafeAreaView style={{ flex: 1, borderWidth: 0, width: 350 }}>
       <View
         style={{
           flex: 1,
@@ -57,7 +57,7 @@ export default function DrawerLayout() {
       >
         <View style = {{borderRightWidth: 1, flex:1, justifyContent:'center', alignItems:'center', height:30,}}>
           <TouchableOpacity style={styles.signInButton}>
-            <Text style={{ fontSize: 17 }}>로그인</Text>
+            <Text style={{ fontSize: 17, fontFamily:'' }}>로그인</Text>
           </TouchableOpacity>
         </View>
         <View style = {{flex:1, justifyContent:'center', alignItems:'center', height: 30,}}>
@@ -75,86 +75,104 @@ export default function DrawerLayout() {
           height: 300,
         }}
       >
-        <View style={{ justifyContent: "center", alignItems: "center" }}>
-          <Text style={{ fontSize: 15, marginTop: 10, borderWidth: 1 }}>
+        <View style={{ justifyContent: "center", width:295,}}>
+          <Text style={{ fontSize: 20, marginTop: 20,}}>
             일반기능
           </Text>
         </View>
 
         <View
           style={{
-            flexDirection: "row",
-            borderWidth: 1,
+            borderWidth: 0,
             justifyContent: "space-around",
             alignItems: "center",
             marginTop: 20,
-            height: 70,
+            height: 200,
             width: 350,
           }}
         >
-          <TouchableOpacity style={styles.cateButton}>
+          <View style = {{flexDirection:'row', justifyContent:'flex-start', width:300,}}>
+          <TouchableOpacity style={[styles.cateButton, {backgroundColor:'cornsilk', opacity:0.7}]}>
             <MaterialIcons name="announcement" size={20} color="black" />
             <Text>공지</Text>
           </TouchableOpacity>
 
-          <TouchableOpacity style={styles.cateButton}>
+          <TouchableOpacity style={[styles.cateButton, {marginLeft:30, backgroundColor:'khaki', opacity:0.7}]}>
             <MaterialIcons name="how-to-vote" size={20} color="black" />
             <Text>투표</Text>
           </TouchableOpacity>
 
-          <TouchableOpacity style={styles.cateButton}>
+          <TouchableOpacity style={[styles.cateButton, {marginLeft:30, backgroundColor:'lawngreen', opacity:0.7}]}>
             <Entypo name="slideshare" size={20} color="black" />
             <Text>나눔&구매</Text>
           </TouchableOpacity>
 
-          <TouchableOpacity style={styles.cateButton}>
-            <MaterialCommunityIcons
-              name="bulletin-board"
-              size={20}
-              color="black"
-            />
+          
+          </View>
+
+          <View style = {{flexDirection:'row', width:300,}}>
+          <TouchableOpacity style={[styles.cateButton, {backgroundColor:'pink', opacity:0.7}]}>
+            <MaterialCommunityIcons name="bulletin-board" size={20} color="black"/>
             <Text>자유게시판</Text>
           </TouchableOpacity>
+
+          <TouchableOpacity style={[styles.cateButton, {marginLeft:30, backgroundColor:'silver', opacity:0.7}]}>
+            <MaterialCommunityIcons name="bulletin-board" size={20} color="black"/>
+            <Text>분신물</Text>
+          </TouchableOpacity>
+          </View>
         </View>
       </View>
 
-      <View style={{ flex: 4, borderWidth: 1, backgroundColor: "gray" }}>
-        <View
+      <View style={{ flex: 4, borderTopWidth: 1, justifyContent:'center',alignItems:'center'}}>
+      <View style = {{width:295,}}>
+      <Text style={{ fontSize: 20, marginTop: 0,}}>
+            스마트기능
+          </Text>
+          </View>
+      <View
           style={{
-            flexDirection: "row",
-            borderWidth: 1,
+            borderWidth: 0,
             justifyContent: "space-around",
             alignItems: "center",
-            marginTop: 30,
-            height: 70,
+            marginTop: 20,
+            height: 200,
             width: 350,
           }}
         >
-          <TouchableOpacity style={styles.cateButton}>
-            <MaterialIcons name="announcement" size={20} color="black" />
-            <Text>공지</Text>
+          <View style = {{flexDirection:'row', justifyContent:'flex-start', width:300,}}>
+          <TouchableOpacity style={[styles.cateButton, {backgroundColor:'cornsilk', opacity:0.7}]}>
+          <MaterialCommunityIcons name="door-closed-lock" size={20} color="black" />
+            <Text>문열기</Text>
           </TouchableOpacity>
 
-          <TouchableOpacity style={styles.cateButton}>
-            <MaterialIcons name="how-to-vote" size={20} color="black" />
-            <Text>투표</Text>
+          <TouchableOpacity style={[styles.cateButton, {marginLeft:30, backgroundColor:'thistle', opacity:0.7}]}>
+          <MaterialCommunityIcons name="cctv" size={20} color="black" />
+            <Text>현관보기</Text>
           </TouchableOpacity>
 
-          <TouchableOpacity style={styles.cateButton}>
-            <Entypo name="slideshare" size={20} color="black" />
-            <Text>나눔&구매</Text>
+          <TouchableOpacity style={[styles.cateButton, {marginLeft:30, backgroundColor:'powderblue', opacity:0.7}]}>
+            <FontAwesome5 name="hands-helping" size={20} color="black" />
+            <Text>헬퍼</Text>
           </TouchableOpacity>
 
-          <TouchableOpacity style={styles.cateButton}>
-            <MaterialCommunityIcons
-              name="bulletin-board"
-              size={20}
-              color="black"
-            />
+          
+          </View>
+
+          <View style = {{flexDirection:'row', width:300,}}>
+          <TouchableOpacity style={[styles.cateButton, {opacity:0.7}]}>
+            <MaterialCommunityIcons name="bulletin-board" size={20} color="black"/>
             <Text>자유게시판</Text>
           </TouchableOpacity>
+
+          <TouchableOpacity style={[styles.cateButton, {marginLeft:30, opacity: 0.7}]}>
+            <MaterialCommunityIcons name="bulletin-board" size={20} color="black"/>
+            <Text>분신물</Text>
+          </TouchableOpacity>
+          </View>
         </View>
       </View>
+      
     </SafeAreaView>
   );
 }
@@ -171,11 +189,21 @@ const styles = StyleSheet.create({
   },
 
   cateButton: {
-    borderWidth:1,
+    borderWidth:0,
     height: 60,
     width: 75,
     borderRadius: 20,
     justifyContent: 'center',
-    alignItems: 'center'
+    alignItems: 'center',
+    shadowOpacity:0.7,
+    shadowColor: 'black',
+    shadowRadius: 4,
+    shadowOffset: {
+      height: 13,
+      width: 56,
+      
+
+    },
+    elevation: 6,
   }
 })
