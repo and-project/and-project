@@ -1,8 +1,13 @@
 import React from 'react'
 import {View, Text, SafeAreaView, TouchableOpacity, StyleSheet} from 'react-native'
 import { MaterialCommunityIcons, MaterialIcons, Entypo, FontAwesome5 } from '@expo/vector-icons';
+import NoticePage from '../pages/NoticePage';
+
+
 
 export default function DrawerLayout() {
+
+
   return (
     <SafeAreaView style={{ flex: 1, borderWidth: 0, width: 350 }}>
       <View
@@ -48,14 +53,14 @@ export default function DrawerLayout() {
           opacity: 1,
           width: 330,
           height: 50,
-          marginTop: 10,
+          marginTop: 15,
           flexDirection: "row",
           alignItems: "center",
           justifyContent: "space-around",
           alignSelf: "center",
         }}
       >
-        <View style = {{borderRightWidth: 1, flex:1, justifyContent:'center', alignItems:'center', height:30,}}>
+        <View style = {{borderRightWidth: 1, flex:1, justifyContent:'center', alignItems:'center', height:30}}>
           <TouchableOpacity style={styles.signInButton}>
             <Text style={{ fontSize: 17, fontFamily:'' }}>로그인</Text>
           </TouchableOpacity>
@@ -87,12 +92,13 @@ export default function DrawerLayout() {
             justifyContent: "space-around",
             alignItems: "center",
             marginTop: 20,
-            height: 200,
+            height: 180,
             width: 350,
           }}
         >
           <View style = {{flexDirection:'row', justifyContent:'flex-start', width:300,}}>
-          <TouchableOpacity style={[styles.cateButton, {backgroundColor:'cornsilk', opacity:0.7}]}>
+          <TouchableOpacity
+            style={[styles.cateButton, {backgroundColor:'cornsilk', opacity:0.7}]}>
             <MaterialIcons name="announcement" size={20} color="black" />
             <Text>공지</Text>
           </TouchableOpacity>
@@ -126,7 +132,7 @@ export default function DrawerLayout() {
 
       <View style={{ flex: 4, borderTopWidth: 1, justifyContent:'center',alignItems:'center'}}>
       <View style = {{width:295,}}>
-      <Text style={{ fontSize: 20, marginTop: 0,}}>
+      <Text style={{ fontSize: 20, paddingTop: 30,}}>
             스마트기능
           </Text>
           </View>
@@ -135,7 +141,7 @@ export default function DrawerLayout() {
             borderWidth: 0,
             justifyContent: "space-around",
             alignItems: "center",
-            marginTop: 20,
+            marginTop: 0,
             height: 200,
             width: 350,
           }}
