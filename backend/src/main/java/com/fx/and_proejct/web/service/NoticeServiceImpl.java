@@ -2,12 +2,10 @@ package com.fx.and_proejct.web.service;
 
 import com.fx.and_proejct.notice.domain.Notice;
 import com.fx.and_proejct.notice.domain.repository.NoticeRepository;
-import com.fx.and_proejct.web.form.User;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-import org.springframework.web.bind.annotation.SessionAttribute;
 
 import java.util.List;
 

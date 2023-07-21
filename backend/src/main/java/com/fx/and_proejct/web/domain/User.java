@@ -1,4 +1,4 @@
-package com.fx.and_proejct.web.form;
+package com.fx.and_proejct.web.domain;
 
 import lombok.Data;
 

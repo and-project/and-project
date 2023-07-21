@@ -2,7 +2,7 @@ package com.fx.and_proejct.web.controller;
 
 import com.fx.and_proejct.user.repository.UserRepository;
 import com.fx.and_proejct.web.form.LoginForm;
-import com.fx.and_proejct.web.form.User;
+import com.fx.and_proejct.web.domain.User;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Controller;

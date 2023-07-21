@@ -1,6 +1,6 @@
 package com.fx.and_proejct.user.repository;
 
-import com.fx.and_proejct.web.form.User;
+import com.fx.and_proejct.web.domain.User;
 
 import java.util.List;
 import java.util.Optional;
