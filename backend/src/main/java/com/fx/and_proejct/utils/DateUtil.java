@@ -1,9 +1,13 @@
 package com.fx.and_proejct.utils;
 
+import lombok.extern.slf4j.Slf4j;
+
 import java.time.Duration;
 import java.time.LocalDateTime;
 import java.time.temporal.ChronoUnit;
 
+
+@Slf4j
 public class DateUtil {
 
     private static LocalDateTime dateTime;
@@ -56,29 +60,44 @@ public class DateUtil {
      */
     public static String getElapsedTimeDescription(LocalDateTime create, LocalDateTime present){
         long year = ChronoUnit.YEARS.between(create, present);
+        long month = ChronoUnit.MONTHS.between(create, present);
+        long day = ChronoUnit.DAYS.between(create, present);
+        long hour = ChronoUnit.HOURS.between(create, present);
+        long min = ChronoUnit.MINUTES.between(create, present);
+        long sec = ChronoUnit.SECONDS.between(create, present);
+        log.info("Y : {}",year);
+        log.info("M : {}",month);
+        log.info("D : {}",day);
+        log.info("H : {}",hour);
+        log.info("m : {}",min);
+        log.info("s : {}",sec);
+
         if(year != 0)
             return year + "년 전";
 
-        long month = ChronoUnit.MONTHS.between(create, present);
+
         if(month != 0)
             return month + "달 전";
 
-        long day = ChronoUnit.DAYS.between(create, present);
+
         if(day != 0)
             return day + "일 전";
 
-        long hour = ChronoUnit.HOURS.between(create, present);
+
         if(hour != 0)
             return hour + "시간 전";
 
-        long min = ChronoUnit.MINUTES.between(create, present);
+
         if(min != 0)
             return min + "분 전";
 
-        long sec = ChronoUnit.SECONDS.between(create, present);
+
         if(sec != 0)
             return sec + "초 전";
         else
             return "지금";
     }
+
+
+
 }
