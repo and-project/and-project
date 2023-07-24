@@ -4,7 +4,6 @@ import { MaterialCommunityIcons, MaterialIcons, Entypo, FontAwesome5 } from '@ex
 import NoticePage from '../pages/NoticePage';
 
 
-
 export default function DrawerLayout() {
 
 

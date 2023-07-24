@@ -1,5 +1,5 @@
 import React, {useState, useEffect, useRef} from 'react';
-import {Text, View, StyleSheet, SafeAreaView, TouchableOpacity, DrawerLayoutAndroid, Button} from 'react-native';
+import {Text, View, StyleSheet, TouchableOpacity, DrawerLayoutAndroid, Button} from 'react-native';
 import {WebView} from 'react-native-webview';
 import LoadingPage from '../pages/LoadingPage';
 import {SliderBox} from 'react-native-image-slider-box';
@@ -52,7 +52,7 @@ export default function MainPage() {
       renderNavigationView={navigationView}>
       
 
-    <SafeAreaView>
+    <View>
 
       <View style={{marginTop:100, width: 100,}}>
         <SliderBox
@@ -86,7 +86,7 @@ export default function MainPage() {
         </View>
         <Text>asdasd</Text>
       </View>
-    </SafeAreaView>
+    </View>
     </DrawerLayoutAndroid>
     
     );
