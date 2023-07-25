@@ -5,6 +5,7 @@ import NoticePage from '../pages/NoticePage';
 import StackNavigator from '../navigator/StackNavigator';
 import SignIn from '../pages/SignIn';
 import { useNavigation } from '@react-navigation/native';
+import TestPage from '../pages/TestPage';
 
 export default function DrawerLayout() {
 
@@ -152,7 +153,8 @@ export default function DrawerLayout() {
           }}
         >
           <View style = {{flexDirection:'row', justifyContent:'flex-start', width:300,}}>
-          <TouchableOpacity style={[styles.cateButton, {backgroundColor:'cornsilk', opacity:0.7}]}>
+          <TouchableOpacity onPress={()=>{navigation.navigate('테스트페이지')}}
+            style={[styles.cateButton, {backgroundColor:'cornsilk', opacity:0.7}]}>
           <MaterialCommunityIcons name="door-closed-lock" size={20} color="black" />
             <Text>문열기</Text>
           </TouchableOpacity>
