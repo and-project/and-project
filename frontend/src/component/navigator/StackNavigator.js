@@ -4,6 +4,9 @@ import { createNativeStackNavigator } from '@react-navigation/native-stack';
 
 //페이지로 만든 컴포넌트 삽입 (만든 컴포넌트 파일 위치와 파일명으로 변경)
 import MainPage from '../main/MainPage';
+import SignIn from '../pages/SignIn';
+import NoticePage from '../pages/NoticePage';
+import SignUp from '../pages/SignUp';
 
 
 
@@ -22,15 +25,19 @@ const StackNavigator = () =>{
                     backgroundColor: "white",
                     borderBottomColor: "whitek",
                     shadowColor: "white",
-                    height:100
+                    height:70,
                 },
                 headerTintColor: "black",
-                headerBackTitleVisible: false
+                headerBackTitleVisible: false,
             }}>
 
             {/* component={} 안에 페이지로 만들 컴포넌트를 넣음. 컴포넌트에 페이지 기능을 부여하는 코드*/}
             <Stack.Screen name="메인페이지" component={MainPage}/>
-            
+            <Stack.Screen name='로그인페이지' component={SignIn}/>
+            <Stack.Screen name='게시판' component={NoticePage}/>
+            <Stack.Screen name='회원가입' component={SignUp}/>
+
+
         </Stack.Navigator>
     )
 }

@@ -2,10 +2,13 @@ import React from 'react'
 import {View, Text, SafeAreaView, TouchableOpacity, StyleSheet} from 'react-native'
 import { MaterialCommunityIcons, MaterialIcons, Entypo, FontAwesome5 } from '@expo/vector-icons';
 import NoticePage from '../pages/NoticePage';
-
+import StackNavigator from '../navigator/StackNavigator';
+import SignIn from '../pages/SignIn';
+import { useNavigation } from '@react-navigation/native';
 
 export default function DrawerLayout() {
 
+  const navigation = useNavigation();
 
   return (
     <SafeAreaView style={{ flex: 1, borderWidth: 0, width: 350 }}>
@@ -60,12 +63,14 @@ export default function DrawerLayout() {
         }}
       >
         <View style = {{borderRightWidth: 1, flex:1, justifyContent:'center', alignItems:'center', height:30}}>
-          <TouchableOpacity style={styles.signInButton}>
+          <TouchableOpacity style={styles.signInButton}
+            onPress = {()=>{navigation.navigate('로그인페이지')}}>
             <Text style={{ fontSize: 17, fontFamily:'' }}>로그인</Text>
           </TouchableOpacity>
         </View>
         <View style = {{flex:1, justifyContent:'center', alignItems:'center', height: 30,}}>
-          <TouchableOpacity style={styles.signInButton}>
+          <TouchableOpacity onPress={()=>{navigation.navigate('회원가입')}}
+          style={styles.signInButton}>
             <Text style={{ fontSize: 17 }}>회원가입</Text>
           </TouchableOpacity>
         </View>
@@ -116,7 +121,8 @@ export default function DrawerLayout() {
           </View>
 
           <View style = {{flexDirection:'row', width:300,}}>
-          <TouchableOpacity style={[styles.cateButton, {backgroundColor:'pink', opacity:0.7}]}>
+          <TouchableOpacity onPress={()=>{navigation.navigate('NoticePage')}}
+          style={[styles.cateButton, {backgroundColor:'pink', opacity:0.7}]}>
             <MaterialCommunityIcons name="bulletin-board" size={20} color="black"/>
             <Text>자유게시판</Text>
           </TouchableOpacity>

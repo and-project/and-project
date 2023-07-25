@@ -29,8 +29,8 @@ const [pw, setPw] = useState('');
       <View
         style={{
           borderWidth: 0.8,
-          height: 300,
-          width: 300,
+          height: 400,
+          width: 350,
           marginTop: 10,
           alignItems: "center",
         }}

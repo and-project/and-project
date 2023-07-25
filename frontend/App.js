@@ -9,10 +9,10 @@ import StackNavigator from '../frontend/src/component/navigator/StackNavigator';
 
 export default function App() {
   return (
-    <MainPage/>
-    // <LoadingPage/>
-    // <DrawerLayout/>
-    // <SignIn/>
+    <NavigationContainer>
+      <StatusBar style="black" />
+      <StackNavigator />
+    </NavigationContainer>
   );
 }
 

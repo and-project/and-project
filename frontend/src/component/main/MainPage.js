@@ -11,7 +11,7 @@ import { Feather } from '@expo/vector-icons';
 import DrawerLayout from '../form/DrawerLayout';
 
 
-export default function MainPage() {
+export default function MainPage({navigation}) {
 
   
 
