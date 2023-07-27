@@ -15,11 +15,12 @@ export default function DrawerLayout() {
     <SafeAreaView style={{ flex: 1, borderWidth: 0, width: 350 }}>
       <View
         style={{
-          flex: 1,
+          height: 75,
+          borderWidth:0,
           flexDirection: "row",
           alignItems: "center",
           marginLeft: 10,
-          marginTop: 40,
+          marginTop: 0,
         }}
       >
         <View
@@ -56,7 +57,7 @@ export default function DrawerLayout() {
           opacity: 1,
           width: 330,
           height: 50,
-          marginTop: 15,
+          marginTop: 5,
           flexDirection: "row",
           alignItems: "center",
           justifyContent: "space-around",
@@ -82,11 +83,11 @@ export default function DrawerLayout() {
           borderTopWidth: 1,
           marginTop: 10,
           alignItems: "center",
-          height: 300,
+          height: 230,
         }}
       >
         <View style={{ justifyContent: "center", width:295,}}>
-          <Text style={{ fontSize: 20, marginTop: 20,}}>
+          <Text style={{ fontSize: 20, marginTop: 10,}}>
             일반기능
           </Text>
         </View>
@@ -96,8 +97,8 @@ export default function DrawerLayout() {
             borderWidth: 0,
             justifyContent: "space-around",
             alignItems: "center",
-            marginTop: 20,
-            height: 180,
+            marginTop: 10,
+            height: 160,
             width: 350,
           }}
         >
@@ -136,9 +137,9 @@ export default function DrawerLayout() {
         </View>
       </View>
 
-      <View style={{ flex: 4, borderTopWidth: 1, justifyContent:'center',alignItems:'center'}}>
+      <View style={{ borderTopWidth: 1, justifyContent:'center',alignItems:'center'}}>
       <View style = {{width:295,}}>
-      <Text style={{ fontSize: 20, paddingTop: 30,}}>
+      <Text style={{ fontSize: 20, paddingTop: 10,}}>
             스마트기능
           </Text>
           </View>
@@ -148,7 +149,7 @@ export default function DrawerLayout() {
             justifyContent: "space-around",
             alignItems: "center",
             marginTop: 0,
-            height: 200,
+            height: 160,
             width: 350,
           }}
         >
