@@ -1,0 +1,58 @@
+@media only screen and (min-width: 834px){
+  
+.header{
+  display: flex;
+  background-color: antiquewhite;
+
+  .title{
+    width: 235px;
+    height: 100px;
+    border: solid 1px red;
+    margin: 2px;
+    background-color: burlywood;
+
+  }
+
+  .link{
+    display: flex;
+    height: 100px;
+    border: solid 1px red;
+    justify-content: space-between;
+    gap: 150px;
+    margin-left: 210px;
+    background-color: burlywood;
+  }
+  .link div{
+    width: 100px;
+    margin: 10px 0px;
+    border: solid 1px rebeccapurple;
+  }
+}
+
+.body{
+  margin: 100px 100px 0px 10
+  
+  
+  0px;
+  .content_info{
+    height: 40px;
+    background-color: rgb(129, 218, 221);
+    border: 1px solid red;
+  }
+  .content_container{
+    height: 500px; //30rem이 조금 더 작음
+    background-color: cadetblue;
+
+    border: 1px solid red;
+  }
+  .remote{
+    position: fixed;
+    bottom: 115px;
+    left: 18px;
+    width: 100px;
+    height: 290px;
+    background-color: aquamarine;
+  }
+}
+
+}

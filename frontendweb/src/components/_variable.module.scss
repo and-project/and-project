@@ -1,0 +1,7 @@
+@media all and (min-width: 1024px) {
+  $default_size: 100px;
+}
+
+@media all and (min-width: 768px) and (max-width: 1023px){
+  $default_size: 10px;
+}

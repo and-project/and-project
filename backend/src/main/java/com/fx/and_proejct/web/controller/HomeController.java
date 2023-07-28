@@ -18,7 +18,7 @@ import java.util.*;
 @RestController
 @RequiredArgsConstructor
 @RequestMapping("/api/home")
-public class HomeController {
+public class homeController {
 
     private final NoticeService noticeService;
 
@@ -38,9 +38,11 @@ public class HomeController {
     @PostConstruct
     public void setTestNotice(){
         int[] noticeRange = {107,108};
-        for(int i = 0; i < 150; i++)
-            noticeService.addNotice(new Notice("test","test Body", DateUtil.getNow(),noticeRange,
-                    false,null,null,true));
+
+        for(int i = 1; i <= 20; i++){
+            Notice notice = new Notice("test title" + i,"test Body" + i, DateUtil.getNow(),noticeRange,false,null,null,true);
+            noticeService.addNotice(notice);
+        }
     }
 
 }
