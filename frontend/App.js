@@ -7,6 +7,9 @@ import SignIn from './src/component/pages/SignIn';
 import {NavigationContainer} from '@react-navigation/native';
 import StackNavigator from '../frontend/src/component/navigator/StackNavigator';
 import TestPage from './src/component/pages/TestPage';
+import FlatButton from './src/component/form/FlatButton';
+import Onboarding from './src/component/form/Onboarding';
+
 
 export default function App() {
   return (
@@ -15,6 +18,8 @@ export default function App() {
       <StackNavigator />
     </NavigationContainer>
   //  <Test/>
+  // <Onboarding/>
+  // <FlatButton/>
   );
 }
 

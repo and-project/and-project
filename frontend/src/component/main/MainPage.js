@@ -9,6 +9,9 @@ import splash from '../../../assets/splash.png'
 import { widthPercentageToDP as wp, heightPercentageToDP as hp } from 'react-native-responsive-screen';
 import { Feather } from '@expo/vector-icons';
 import DrawerLayout from '../form/DrawerLayout';
+import FlatButton from '../form/FlatButton';
+
+
 
 
 export default function MainPage({navigation}) {
@@ -54,7 +57,7 @@ export default function MainPage({navigation}) {
 
     <View>
 
-      <View style={{marginTop:100, width: 100,}}>
+      <View style={{marginTop:0, width: 100,}}>
         <SliderBox
           images = {img}
           autoplay = {true} //자동 슬라이더 넘김
@@ -76,16 +79,14 @@ export default function MainPage({navigation}) {
         </TouchableOpacity>
       </View>
 
-      <View style = {{borderWidth:1, height:265,}}>
-        <Text>asdasd</Text>
-      </View>
-
-      <View style = {{height:290,}}>
-        <View style = {{borderBottomWidth:1, height: 35, justifyContent:'center', backgroundColor:'lightgray'}}>
-          <Text style = {{fontSize:17, paddingLeft:10,}}>아파트 소식</Text>
-        </View>
-        <Text>asdasd</Text>
-      </View>
+      <Text style={{textAlign:'center', fontSize:30, paddingTop:10,}}>간편 기능</Text>
+        <TouchableOpacity style={{alignSelf:'center'}}>
+          <Feather name="plus-square" size={30} color="black" />        
+        </TouchableOpacity>
+        <Text style={{alignSelf:'center', color:'blue'}}>나만의 기능을 추가 해 보세요.</Text>
+          <View style={{borderWidth:1, justifyContent:'center', marginTop:10, height:300,}}>
+            <FlatButton/>
+          </View>
     </View>
     </DrawerLayoutAndroid>
     

@@ -8,6 +8,8 @@ export default function TestPage({content}) {
 
 const dataList = data.notice;
 
+
+
 return(
 
     <View>
