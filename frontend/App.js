@@ -6,20 +6,17 @@ import DrawerLayout from './src/component/form/DrawerLayout';
 import SignIn from './src/component/pages/SignIn';
 import {NavigationContainer} from '@react-navigation/native';
 import StackNavigator from '../frontend/src/component/navigator/StackNavigator';
-import TestPage from './src/component/pages/TestPage';
-import FlatButton from './src/component/form/FlatButton';
-import Onboarding from './src/component/form/Onboarding';
+import CateCard from './src/component/form/cateCard';
 
 
 export default function App() {
   return (
-    <NavigationContainer>
-      <StatusBar style="black" />
-      <StackNavigator />
-    </NavigationContainer>
-  //  <Test/>
-  // <Onboarding/>
-  // <FlatButton/>
+  //   <NavigationContainer>
+  //  <StatusBar style="black" />
+  //   <StackNavigator />
+  //   </NavigationContainer>
+ 
+    <CateCard/>
   );
 }
 

@@ -13,7 +13,7 @@ const [dataList, setDataList] = useState();
   return (
     <View style={{borderWidth:1, height:70, borderRadius:5, paddingLeft:5, paddingTop:5,}}>
         <Text style={{fontSize:20,fontWeight:'500'}}>{content.title}</Text>
-    <Text style={{fontSize:15, paddingTop:5,}}>{content.desc}</Text>
+    <Text style={{fontSize:15, paddingTop:5,}}>{content.desc}</Text>a
 </View>
   )
 }

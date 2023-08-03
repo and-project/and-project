@@ -9,7 +9,9 @@ import splash from '../../../assets/splash.png'
 import { widthPercentageToDP as wp, heightPercentageToDP as hp } from 'react-native-responsive-screen';
 import { Feather } from '@expo/vector-icons';
 import DrawerLayout from '../form/DrawerLayout';
-import FlatButton from '../form/FlatButton';
+import Paginator from '../form/Paginator';
+import Onboarding from '../form/Onboarding';
+// import FlatButton from '../form/FlatButton';
 
 
 
@@ -79,15 +81,17 @@ export default function MainPage({navigation}) {
         </TouchableOpacity>
       </View>
 
-      <Text style={{textAlign:'center', fontSize:30, paddingTop:10,}}>간편 기능</Text>
-        <TouchableOpacity style={{alignSelf:'center'}}>
+      <Text style={{textAlign:'center', fontSize:30, paddingTop:30,}}>간편 기능</Text>
+        <TouchableOpacity style={{alignSelf:'center', marginTop:10,}}>
           <Feather name="plus-square" size={30} color="black" />        
         </TouchableOpacity>
-        <Text style={{alignSelf:'center', color:'blue'}}>나만의 기능을 추가 해 보세요.</Text>
-          <View style={{borderWidth:1, justifyContent:'center', marginTop:10, height:300,}}>
-            <FlatButton/>
+        <Text style={{alignSelf:'center', color:'blue', marginTop:10,}}>나만의 기능을 추가 해 보세요.</Text>
+          <View style={{borderWidth:0, justifyContent:'center', marginTop:5, height:350}}>
+            {/* <FlatButton/> */}
+            <Onboarding/>
           </View>
     </View>
+    
     </DrawerLayoutAndroid>
     
     );
