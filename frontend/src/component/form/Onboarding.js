@@ -1,31 +1,57 @@
 import React, {useRef, useState} from 'react';
-import {View, Text, StyleSheet, FlatList, Animated, useWindowDimensions} from 'react-native';
+import {View, Text, StyleSheet, FlatList, Animated, useWindowDimensions, TouchableOpacity,
+Button, Alert} from 'react-native';
 import DATA from './DATA';
 import { widthPercentageToDP as wp, heightPercentageToDP as hp } from 'react-native-responsive-screen';
 import Paginator from './Paginator';
+
 
 export default function Onboarding(){
   const [currentIndex, setCurrentIndex] = useState(0);
   const scrollX = useRef(new Animated.Value(0)).current;
   const viewableItemsChanged = useRef(({viewableItems})=>{
-    setCurrentIndex(viewableItems[0].index);
+    setCurrentIndex(viewableItems[0]);
   }).current
 
  
 
   const viewConfig = useRef({viewAreaCoveragePercentThreshold: 50}).current
 
+  const [dataList, setDataList] = useState(DATA);
+
+  const handlerLongClick = (id) =>
+    
+     Alert.alert(                    
+      "기능 해제",               
+       "해당 기능을 해제 할까요?",               
+      [                             
+        {
+          text: "아니요",                                   
+          style: "cancel"
+        },
+        { text: "네", onPress : () => {const updatedDataList=dataList.filter((item)=>item.id !== id);
+          setDataList(updatedDataList);}  },
+                                              
+      ],
+      
+      { cancelable: false }
+    );
+
   return(
     <View style={{width:wp('100%')}}>
       <FlatList
-        data={DATA}
+        data={dataList}
         renderItem={({item})=> {
         return (
-          <View style ={[styles.cardContainer,{opacity: 0.8}]}>
+          <View>
+          <TouchableOpacity 
+          onLongPress={()=>handlerLongClick(item.id)}
+          style ={[styles.cardContainer,{opacity: 0.8}]}>
               <Text style={styles.title}>{item.title}</Text>
               <Text style={styles.description}>{item.description}</Text>
       
-          </View>
+          </TouchableOpacity>
+        </View>
         )
       }}
         horizontal
@@ -39,7 +65,7 @@ export default function Onboarding(){
         viewabilityConfig={viewConfig}
         
       />
-    <Paginator data={DATA} scrollX={scrollX}/>
+    <Paginator data={dataList} scrollX={scrollX}/>
    </View>
    
   )}

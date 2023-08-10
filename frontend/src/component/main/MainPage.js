@@ -11,13 +11,21 @@ import { Feather } from '@expo/vector-icons';
 import DrawerLayout from '../form/DrawerLayout';
 import Paginator from '../form/Paginator';
 import Onboarding from '../form/Onboarding';
-// import FlatButton from '../form/FlatButton';
-
-
+import CateCard from '../pages/CateCard';
 
 
 export default function MainPage({navigation}) {
 
+  const [modalVisible, setModalVisible] = useState(false)
+
+
+  const openModal = () => {
+    setModalVisible(true);
+  }
+
+  const closeModal = () => {
+    setModalVisible(false);
+  }
   
 
 //아파트 메인사진 들어갈 곳
@@ -82,13 +90,17 @@ export default function MainPage({navigation}) {
       </View>
 
       <Text style={{textAlign:'center', fontSize:30, paddingTop:30,}}>간편 기능</Text>
-        <TouchableOpacity style={{alignSelf:'center', marginTop:10,}}>
+        <TouchableOpacity onPress={openModal}
+          style={{alignSelf:'center', marginTop:10,}}>
           <Feather name="plus-square" size={30} color="black" />        
         </TouchableOpacity>
         <Text style={{alignSelf:'center', color:'blue', marginTop:10,}}>나만의 기능을 추가 해 보세요.</Text>
           <View style={{borderWidth:0, justifyContent:'center', marginTop:5, height:350}}>
             {/* <FlatButton/> */}
             <Onboarding/>
+            <CateCard
+             modalVisible={modalVisible}
+             closeModal={closeModal}/>
           </View>
     </View>
     
