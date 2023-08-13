@@ -32,9 +32,9 @@ const StackNavigator = () =>{
             }}>
 
             {/* component={} 안에 페이지로 만들 컴포넌트를 넣음. 컴포넌트에 페이지 기능을 부여하는 코드*/}
-            <Stack.Screen name="메인페이지" component={MainPage}/>
+            <Stack.Screen name="메인페이지"  component={MainPage}/>
             <Stack.Screen name='로그인페이지' component={SignIn}/>
-            <Stack.Screen name='게시판' component={NoticePage}/>
+            <Stack.Screen name='공지' component={NoticePage}/>
             <Stack.Screen name='회원가입' component={SignUp}/>
             <Stack.Screen name='테스트페이지' component={TestPage}/>
 

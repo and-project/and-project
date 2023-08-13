@@ -1,12 +1,17 @@
-import React, {useRef, useState} from 'react';
+import React, {useEffect, useRef, useState} from 'react';
 import {View, Text, StyleSheet, FlatList, Animated, useWindowDimensions, TouchableOpacity,
 Button, Alert} from 'react-native';
 import DATA from './DATA';
 import { widthPercentageToDP as wp, heightPercentageToDP as hp } from 'react-native-responsive-screen';
 import Paginator from './Paginator';
+import { useNavigation, useNavigationState } from '@react-navigation/native';
+import StackNavigator from '../navigator/StackNavigator';
+import SignIn from '../pages/SignIn';
+import data from '../../../data.json'
 
+export default function Onboarding({route}){
 
-export default function Onboarding(){
+  const navigation = useNavigation()
   const [currentIndex, setCurrentIndex] = useState(0);
   const scrollX = useRef(new Animated.Value(0)).current;
   const viewableItemsChanged = useRef(({viewableItems})=>{
@@ -37,19 +42,23 @@ export default function Onboarding(){
       { cancelable: false }
     );
 
+          
+    
+
   return(
     <View style={{width:wp('100%')}}>
       <FlatList
         data={dataList}
         renderItem={({item})=> {
         return (
+          
           <View>
-          <TouchableOpacity 
+          <TouchableOpacity onPress={()=>{navigation.navigate(item.screenName)}}
           onLongPress={()=>handlerLongClick(item.id)}
           style ={[styles.cardContainer,{opacity: 0.8}]}>
               <Text style={styles.title}>{item.title}</Text>
               <Text style={styles.description}>{item.description}</Text>
-      
+          
           </TouchableOpacity>
         </View>
         )
@@ -81,10 +90,11 @@ const styles = StyleSheet.create({
   },
 
   cardContainer:{
+    borderStyle: 'dashed',
     borderRadius: 10,
-    backgroundColor:'pink',
+    backgroundColor:'white',
     height: 250,
-    borderWidth:1,
+    borderWidth: 2,
     justifyContent: 'center',
     alignItems: 'center',
     shadowOpacity:0.9,

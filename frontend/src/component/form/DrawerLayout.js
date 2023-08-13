@@ -103,7 +103,7 @@ export default function DrawerLayout() {
           }}
         >
           <View style = {{flexDirection:'row', justifyContent:'flex-start', width:300,}}>
-          <TouchableOpacity
+          <TouchableOpacity onPress={()=>{navigation.navigate('공지')}}
             style={[styles.cateButton, {backgroundColor:'cornsilk', opacity:0.7}]}>
             <MaterialIcons name="announcement" size={20} color="black" />
             <Text>공지</Text>

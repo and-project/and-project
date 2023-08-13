@@ -9,8 +9,16 @@ import {View,
 import { widthPercentageToDP as wp, heightPercentageToDP as hp } from 'react-native-responsive-screen';
 import { MaterialCommunityIcons, MaterialIcons, Entypo, FontAwesome5 } from '@expo/vector-icons';
 import DATA from '../form/DATA';
+import { onClick } from 'deprecated-react-native-prop-types/DeprecatedTextInputPropTypes';
+import NoticePage from './NoticePage';
+import { useNavigation } from '@react-navigation/native';
+import StackNavigator from '../navigator/StackNavigator';
+import SignIn from './SignIn';
+import data from '../../../data.json';
 
-export default function CateCard({modalVisible, closeModal}){
+export default function CateCard({modalVisible, closeModal, onClick}){
+
+  const navigation = useNavigation();
 
 const inpust = 
     { 
@@ -19,6 +27,8 @@ const inpust =
         description : 'asdasd',
        
       }
+
+ 
 
     
   return (
@@ -50,19 +60,30 @@ const inpust =
           }}
         >
           <View style = {{flexDirection:'row', justifyContent:'flex-start', width:300,}}>
-          <TouchableOpacity onPress={()=>DATA.push(inpust)}
+          <TouchableOpacity onPress={()=>DATA.push({id: 0, 
+              title: '공지', 
+              description:'각 종 공지글들을 확인 할 수 있습니다.', 
+              screenName : '로그인페에지',
+              test: {name : '로그인페이지'}
+              
+          }
+              )
+            }
             activeOpacity={0.1}
             style={[styles.cateButton, {backgroundColor:'cornsilk', opacity:0.7}]}>
             <MaterialIcons name="announcement" size={20} color="black" />
             <Text>공지</Text>
           </TouchableOpacity>
 
-          <TouchableOpacity style={[styles.cateButton, {marginLeft:30, backgroundColor:'khaki', opacity:0.7}]}>
+          <TouchableOpacity onPress={()=>DATA.push({id:1, title:'투표', description:'아파트 관련 공지사항을 확인 해 보세요.',
+              onClick:()=>{navigation.navigate('로그인페이지')}})}
+          style={[styles.cateButton, {marginLeft:30, backgroundColor:'khaki', opacity:0.7}]}>
             <MaterialIcons name="how-to-vote" size={20} color="black" />
             <Text>투표</Text>
           </TouchableOpacity>
 
-          <TouchableOpacity style={[styles.cateButton, {marginLeft:30, backgroundColor:'lawngreen', opacity:0.7}]}>
+          <TouchableOpacity onPress={()=>DATA.push({id:1, title:'나눔&구매', description:'당신의 물건을 나눔하고 구매 해 보세요.'})}
+          style={[styles.cateButton, {marginLeft:30, backgroundColor:'lawngreen', opacity:0.7}]}>
             <Entypo name="slideshare" size={20} color="black" />
             <Text>나눔&구매</Text>
           </TouchableOpacity>

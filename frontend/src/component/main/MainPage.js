@@ -89,7 +89,7 @@ export default function MainPage({navigation}) {
         </TouchableOpacity>
       </View>
 
-      <Text style={{textAlign:'center', fontSize:30, paddingTop:30,}}>간편 기능</Text>
+      {/* <Text style={{textAlign:'center', fontSize:30, paddingTop:30,}}>간편 기능</Text>
         <TouchableOpacity onPress={openModal}
           style={{alignSelf:'center', marginTop:10,}}>
           <Feather name="plus-square" size={30} color="black" />        
@@ -97,11 +97,11 @@ export default function MainPage({navigation}) {
         <Text style={{alignSelf:'center', color:'blue', marginTop:10,}}>나만의 기능을 추가 해 보세요.</Text>
           <View style={{borderWidth:0, justifyContent:'center', marginTop:5, height:350}}>
             {/* <FlatButton/> */}
-            <Onboarding/>
+            {/* <Onboarding/>
             <CateCard
              modalVisible={modalVisible}
              closeModal={closeModal}/>
-          </View>
+          </View> */} 
     </View>
     
     </DrawerLayoutAndroid>
