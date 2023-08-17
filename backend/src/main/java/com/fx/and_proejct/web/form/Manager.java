@@ -1,4 +1,4 @@
-package com.fx.and_proejct.user.form;
+package com.fx.and_proejct.web.form;
 
 import lombok.Data;
 import lombok.ToString;

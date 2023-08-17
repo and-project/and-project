@@ -1,4 +1,4 @@
-package com.fx.and_proejct.user.form;
+package com.fx.and_proejct.web.form;
 
 /**
  * 관리자와 회원 등급

@@ -1,13 +1,11 @@
 package com.fx.and_proejct.notice.domain.repository;
 
 import com.fx.and_proejct.notice.domain.Notice;
+import com.fx.and_proejct.utils.DateUtil;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Repository;
 
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
+import java.util.*;
 
 @Slf4j
 @Repository
@@ -28,8 +26,8 @@ public class MemoryNoticeRepository implements NoticeRepository{
     }
 
     @Override
-    public Notice getById(long Id) {
-        return NOTICE_MAP.get(Id);
+    public Optional<Notice> getById(long Id) {
+        return Optional.ofNullable(NOTICE_MAP.get(Id));
     }
 
     @Override
@@ -58,6 +56,25 @@ public class MemoryNoticeRepository implements NoticeRepository{
     public boolean remove(long id) {
         NOTICE_MAP.remove(id);
         return NOTICE_MAP.get(id) == null;
+    }
+
+    @Override
+    public Notice update(long id, Notice notice) {
+        Notice updateNotice = new Notice();
+        copyToNotice(notice, updateNotice);
+        updateNotice.setNID(id);
+        NOTICE_MAP.put(id,updateNotice);
+        return NOTICE_MAP.get(id);
+    }
+
+    private void copyToNotice(Notice notice, Notice updateNotice) {
+        updateNotice.setTitle(notice.getTitle());
+        updateNotice.setContent(notice.getContent());
+        updateNotice.setNoticeRange(notice.getNoticeRange());
+        updateNotice.setEmotion(notice.getEmotion());
+        updateNotice.setState(notice.isState());
+        updateNotice.setTag(notice.getTag());
+        updateNotice.setCreationTime(DateUtil.getNow());
     }
 
     @Override
