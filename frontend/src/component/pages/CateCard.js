@@ -63,8 +63,8 @@ const inpust =
           <TouchableOpacity onPress={()=>DATA.push({id: 0, 
               title: '공지', 
               description:'각 종 공지글들을 확인 할 수 있습니다.', 
-              screenName : '로그인페에지',
-              test: {name : '로그인페이지'}
+              screenName : ('로그인페이지')
+             
               
           }
               )
