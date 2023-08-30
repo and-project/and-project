@@ -5,7 +5,6 @@ import com.fx.and_proejct.utils.DateUtil;
 import com.fx.and_proejct.web.service.NoticeService;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
-import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -18,7 +17,7 @@ import java.util.*;
 @RestController
 @RequiredArgsConstructor
 @RequestMapping("/api/home")
-public class homeController {
+public class HomeController {
 
     private final NoticeService noticeService;
 
@@ -38,11 +37,9 @@ public class homeController {
     @PostConstruct
     public void setTestNotice(){
         int[] noticeRange = {107,108};
-
-        for(int i = 1; i <= 20; i++){
-            Notice notice = new Notice("test title" + i,"test Body" + i, DateUtil.getNow(),noticeRange,false,null,null,true);
-            noticeService.addNotice(notice);
-        }
+        for(int i = 0; i < 150; i++)
+            noticeService.addNotice(new Notice("test","test Body", DateUtil.getNow(),noticeRange,
+                    false,null,null,true));
     }
 
 }

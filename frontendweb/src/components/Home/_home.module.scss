@@ -1,16 +1,19 @@
 @import "../variable.module";
 
 .home{
-  
+    display: flex;
+    flex-direction: column;
+    gap: 10vh;
 }
 
 .header{
-  display: flex;
-  border: default_size solid black;
-  
+    position: sticky;
+    top: 0;
+    height: 64px;
 }
 
-.nav{
-  display: flex;
-
+.list{
+    position: relative;
+    border: 1px solid white;
+    height: 100%;
 }

@@ -1,21 +1,17 @@
-import { useEffect, useState, useRef } from 'react';
+import React, { useEffect, useState, useRef } from 'react';
 import { API, PAGE_SIZE } from '../../constant';
-import styles from './_noticePage.module.scss';
 
-const NoticePage = () => {
+const Test = () => {
   type Notice = {
     id: number;
     title: string;
-    content: string;
-    creationTime: string;
-    noticeRange: [];
     // Other properties of a Notice object
   };
 
   const [notices, setNotices] = useState<Notice[]>([]);
   const [currentPage, setCurrentPage] = useState(1);
   const [isLoading, setIsLoading] = useState(false);
-
+  
   const observer = useRef<IntersectionObserver | null>(null);
 
   const fetchData = async (page: number, pageSize: number) => {
@@ -45,16 +41,13 @@ const NoticePage = () => {
   }, []);
 
   useEffect(() => {
-    observer.current = new IntersectionObserver(
-      (entries) => {
-        const target = entries[0];
-        if (target.isIntersecting) {
-          setIsLoading(true);
-          setTimeout(() => loadMoreData(), 1000);
-        }
-      },
-      { threshold: 0.1 }
-    ); // Adjust threshold value as needed
+    observer.current = new IntersectionObserver((entries) => {
+      const target = entries[0];
+      if (target.isIntersecting) {
+        setIsLoading(true);
+        setTimeout(() => loadMoreData(), 1000);
+      }
+    }, { threshold: 0.1 }); // Adjust threshold value as needed
 
     if (observer.current) {
       observer.current.observe(document.querySelector('#loading-indicator'));
@@ -68,20 +61,13 @@ const NoticePage = () => {
   }, []);
 
   return (
-    <div
-      className={`${styles.cardContainer} ${
-        notices.length > 1 ? styles.multiColumn : ''
-      }`}
-    >
-      {notices.map((item) => (
-        <div className={styles.card} key={item.id}>
-          <div className={styles.noticeRange}>{item.noticeRange}</div>
-          <div className={styles.title}>{item.title}</div>
-          <div className={styles.content}>{item.content}</div>
-          <div className={styles.creationTime}>{item.creationTime}</div>
+    <div>
+      {notices.map((notice, index) => (
+        <div key={index}>
+          <p>{notice.title}</p>
+          {/* Display other relevant information from 'notice' object here */}
         </div>
       ))}
-
       <div id="loading-indicator">
         {isLoading && <p>Loading more data...</p>}
       </div>
@@ -89,4 +75,4 @@ const NoticePage = () => {
   );
 };
 
-export default NoticePage;
+export default Test;

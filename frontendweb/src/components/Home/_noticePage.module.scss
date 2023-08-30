@@ -1,5 +1,37 @@
-.card{
+.cardContainer {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(330px, 1fr)); /* 최소 330px 너비의 칼럼을 1fr 단위로 반복 */
+  gap: 3rem; /* 칼럼 간격 */
+}
+
+.card {
+  border: 1px solid #ccc;
+  padding: 1rem;
+  background: var(--bg-element1);
+  border-radius: 4px;
+  box-shadow: rgba(0, 0, 0, 0.04) 0px 4px 16px 0px;
+  transition: box-shadow 0.25s ease-in 0s, transform 0.25s ease-in 0s;
   display: flex;
   flex-direction: column;
-  height: 100px;
+}
+
+.noticeRange {
+  background-color: yellow;
+  padding: 5px;
+  text-align: center;
+}
+
+.title {
+  font-weight: bold;
+  color: blue;
+}
+
+.content {
+  font-style: italic;
+  color: green;
+}
+
+.creationTime {
+  font-size: 12px;
+  color: gray;
 }
