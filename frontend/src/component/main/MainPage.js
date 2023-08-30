@@ -12,6 +12,7 @@ import DrawerLayout from '../form/DrawerLayout';
 import Paginator from '../form/Paginator';
 import Onboarding from '../form/Onboarding';
 import CateCard from '../pages/CateCard';
+import NoticePage from '../pages/NoticePage';
 
 
 export default function MainPage({navigation}) {

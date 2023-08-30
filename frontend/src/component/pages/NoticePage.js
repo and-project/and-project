@@ -1,38 +1,32 @@
 import React, { useEffect, useState } from 'react'
-import {Text, View, SafeAreaView, ScrollView, TouchableOpacity, StyleSheet} from 'react-native'
+import {Text, View, SafeAreaView, ScrollView, TouchableOpacity, StyleSheet, FlatList} from 'react-native';
 import { widthPercentageToDP as wp, heightPercentageToDP as hp } from 'react-native-responsive-screen';
 import axios from 'axios';
+import { useNavigation } from '@react-navigation/native';
 import {GET_NOTICE_URL} from '../../env'
 import { Button } from 'react-native-paper';
+import { MaterialCommunityIcons } from '@expo/vector-icons';
+import NoticeModal from '../form/NoticeModal';
+
 
 export default function NoticePage() {
 
- const [allNotice, setAllNotice] = useState([])
- const [notices, setNotices] = useState([])
+  const navigation = useNavigation();
 
   const baseURL = GET_NOTICE_URL;
 
- const getApi = ()=> {
-  axios({
-    method : 'GET',
-    responseType : 'json',
-    url : `${baseURL}/${notices}`
-  })
-  .then((response)=>setNotices(response.data))
-  .catch((err)=> console.log(err))
- }
+  const [fetchData, setFetchData] = useState([]);
 
+  const [username, setUserName] = useState('');
+  const [phone, setPhone] = useState('')
 
- 
- 
-  // useEffect(()=>{
-  //   const fetchNotices = async()=>{
-  //     const result = await
-  //       getAPI();
-  //         setNotices(result);
-  //   };
-  //   fetchNotices();
-  // }, [])
+useEffect(()=>{
+  axios.get(`http://jsonplaceholder.typicode.com/users`)
+  .then((response)=> setFetchData(response.data))
+  .catch((error)=> console.log(error))
+}, [])
+
+console.log(fetchData)
 
 
   return (
@@ -41,33 +35,42 @@ export default function NoticePage() {
         <Text style={{fontSize:20,}}>공지사항</Text>
        </View>
           
-        <View style={{width:wp('100%'), flexDirection:'row', justifyContent:'space-around'}}>
+        <View style={{ height:60, width:wp('100%'), flexDirection:'row', justifyContent:'space-around'}}>
         <TouchableOpacity style={styles.cateButton}><Text>전체보기</Text></TouchableOpacity>
         <TouchableOpacity style={styles.cateButton}><Text>새글보기</Text></TouchableOpacity>
        
         </View>
 
-       <ScrollView>
+      <ScrollView>
         {
-          notices.map((value)=>{
-            <View>
-              {value.id}
-            </View>
-
+          fetchData.map((value)=>{
+            return(
+              <TouchableOpacity onPress={()=>{navigation.navigate('공지상세페이지', {
+                id : value.id,
+                username : value.username,
+                phone : value.phone,
+              })}}
+              
+                style={[styles.noticeContainer, {flexDirection:'row'}]}>
+                <View style={{borderWidth:0, width: 250, justifyContent:'center'}}>
+                  <Text style={{fontSize:15,}}>{value.name}</Text>
+                  <Text>{value.email}</Text>
+                </View>
+                <View
+                  style={{alignSelf:'center', marginRight:10,}}>
+                {/* <MaterialCommunityIcons name="alpha-n-box-outline" size={20} color="red" /> */}
+                
+                </View>
+              </TouchableOpacity>
+             
+            )
           })
         }
-       
-        {/* <TouchableOpacity style={[styles.noticeContainer, ]}>
-        
-          <View>
-            <Text style={{fontSize: 15,}}>제목</Text>
-            </View>
-            <View style={{flexDirection:'row',}}>
-            <Text style={{paddingTop:5, fontSize:12,}}>등록일</Text>
-            <Text style={{paddingLeft: 10, paddingTop:5, fontSize:12,}}>몇년몇월몇일</Text>
-            </View>
-        </TouchableOpacity> */}
-       </ScrollView>
+      </ScrollView>
+      
+
+   
+
     </SafeAreaView>
   )
 }
@@ -83,7 +86,7 @@ const styles = StyleSheet.create({
     marginTop: 10,
     paddingLeft: 10,
     flexDirection:'column',
-    justifyContent:'center',
+    justifyContent:'space-between',
     alignSelf:'center'
   },
 

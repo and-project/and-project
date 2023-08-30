@@ -8,6 +8,7 @@ import SignIn from '../pages/SignIn';
 import NoticePage from '../pages/NoticePage';
 import SignUp from '../pages/SignUp';
 import TestPage from '../pages/TestPage'
+import NoticeModal from '../form/NoticeModal';
 
 
 //스택 네비게이션 라이브러리가 제공하는 여러 기능이 담겨있는 객체를 사용하기 위해 상단에 선언하고 시작하는게 규칙!
@@ -37,6 +38,7 @@ const StackNavigator = () =>{
             <Stack.Screen name='공지' component={NoticePage}/>
             <Stack.Screen name='회원가입' component={SignUp}/>
             <Stack.Screen name='테스트페이지' component={TestPage}/>
+            <Stack.Screen name='공지상세페이지' component={NoticeModal}/>
 
 
         </Stack.Navigator>
