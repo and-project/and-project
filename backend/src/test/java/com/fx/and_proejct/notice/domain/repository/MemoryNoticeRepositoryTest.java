@@ -11,6 +11,7 @@ import org.springframework.boot.test.context.SpringBootTest;
 
 import javax.annotation.PostConstruct;
 import java.util.List;
+import java.util.NoSuchElementException;
 
 
 @Slf4j
@@ -27,13 +28,13 @@ class MemoryNoticeRepositoryTest {
 
     @Test
     void save() {
-        int[] noticeRange = {107,108};
+        String[] noticeRange = {"107","108"};
         Notice notice = new Notice("test title","test Body", DateUtil.getNow(),noticeRange,false,null,null,true);
         noticeRepository.save(notice);
-        Long nid = notice.getId();
-        Notice result = noticeRepository.getById(nid);
+        Long nid = notice.getNID();
+        Notice result = noticeRepository.getById(nid).get();
         log.info("find notice = {}", result);
-        Assertions.assertThat(result.getId()).isEqualTo(nid);
+        Assertions.assertThat(result.getNID()).isEqualTo(nid);
     }
 
     @Test
@@ -58,13 +59,13 @@ class MemoryNoticeRepositoryTest {
     void remove() {
         noticeRepository.remove(1L);
         noticeRepository.remove(2L);
-        org.junit.jupiter.api.Assertions.assertThrows(Exception.class,() -> noticeRepository.getById(1L).getTag());
-        org.junit.jupiter.api.Assertions.assertThrows(Exception.class,() -> noticeRepository.getById(2L).getTag());
+        org.junit.jupiter.api.Assertions.assertThrows(Exception.class,() -> noticeRepository.getById(1L).get().getTag());
+        org.junit.jupiter.api.Assertions.assertThrows(Exception.class,() -> noticeRepository.getById(2L).get().getTag());
     }
 
     @PostConstruct
     public void setTestNotice(){
-        int[] noticeRange = {107,108};
+        String[] noticeRange = {"107","108"};
         Notice noticeA = new Notice("test title","test Body", DateUtil.getNow(),noticeRange,false,null,null,true);
         noticeRepository.save(noticeA);
         Notice noticeB = new Notice("test title","test Body", DateUtil.getNow(),noticeRange,false,null,null,true);

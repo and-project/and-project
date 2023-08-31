@@ -4,32 +4,33 @@ import lombok.Data;
 import lombok.ToString;
 
 import java.time.LocalDateTime;
+import java.util.Date;
 
 @Data
 @ToString
 public class Notice {
 
-    private Long id;
-    private String title;
-    private String content;
-    private LocalDateTime creationTime;
-    private int[] noticeRange;
-    private boolean pin;
+    private Long NID;
+    private String Title;
+    private String Content;
+    private LocalDateTime CreationTime;
+    private String[] NoticeRange;
+    private boolean Pin;
     private String tag;
-    private String emotion;
-    private boolean state;
+    private String Emotion;
+    private boolean State;
 
     public Notice() {}
 
-    public Notice(String title, String content, LocalDateTime creationTime, int[] noticeRange, boolean pin, String tag, String emotion, boolean state) {
-        this.title = title;
-        this.content = content;
-        this.creationTime = creationTime;
-        this.noticeRange = noticeRange;
-        this.pin = pin;
+    public Notice(String title, String content, LocalDateTime creationTime, String[] noticeRange, boolean pin, String tag, String emotion, boolean state) {
+        Title = title;
+        Content = content;
+        CreationTime = creationTime;
+        NoticeRange = noticeRange;
+        Pin = pin;
         this.tag = tag;
-        this.emotion = emotion;
-        this.state = state;
+        Emotion = emotion;
+        State = state;
     }
 
 
