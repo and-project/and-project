@@ -1,29 +1,50 @@
-import React, { useEffect, useState, useRef } from 'react';
-import NoticePage from './NoticePage';
-import Nav from './Nav';
-import styles from './_home.module.scss'
-import Test from './Test';
+import NoticePage from "./NoticePage";
+import Nav from "./Nav";
+import styles from "./_home.module.scss";
+import { Link } from "react-router-dom";
+import { useState } from "react";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faBars } from "@fortawesome/free-solid-svg-icons";
 
 const Home = () => {
-  const intersectingRef = useRef<HTMLDivElement>(null);
-  const [isIntersecting, setIsIntersecting] = useState(false);
+  const [showMenu, setShowMenu] = useState<Boolean>(false);
 
-  const handleIntersecting = () => {
-    setIsIntersecting(true);
+  const menupop = () => {
+    setShowMenu(!showMenu);
   };
-
-  useEffect(() => {
-    if (isIntersecting) {
-      // 추가 로직 작성
-    }
-  }, [isIntersecting]);
 
   return (
     <div className={styles.home}>
       <header className={styles.header}>
-        <Nav />
+        <Link to={"/home"} className={styles.title}>
+          오이오이
+        </Link>
+        <section className={styles.sort_list}>
+          <div>
+            <div>
+              <Nav />
+            </div>
+          </div>
+          <div onClick={menupop}>
+            <FontAwesomeIcon icon={faBars} size="2x" />
+            <div className={styles.menu}>
+              <div
+                className={`${
+                  showMenu ? ` ${styles.open}` : ` ${styles.close}`
+                }`}
+              >
+                <ul>
+                  <li>1</li>
+                  <li>2</li>
+                  <li>3</li>
+                  <li>4</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </section>
       </header>
-      <div>asd</div>
+
       <div className={styles.list}>
         <NoticePage />
       </div>

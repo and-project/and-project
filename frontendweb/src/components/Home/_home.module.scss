@@ -1,19 +1,81 @@
 @import "../variable.module";
 
-.home{
-    display: flex;
-    flex-direction: column;
-    gap: 10vh;
+.home {
+  display: flex;
+  flex-direction: column;
+  gap: 10vh;
 }
 
-.header{
-    position: sticky;
-    top: 0;
-    height: 64px;
+.header {
+  position: sticky;
+  top: 0;
+  height: 64px;
 }
 
-.list{
-    position: relative;
-    border: 1px solid white;
-    height: 100%;
+.title {
+  display: flex;
+  font-size: 32px;
+  color: rgb(114, 219, 132);
+  font-family: cursive;
+}
+
+.list {
+  position: relative;
+  border: 1px solid white;
+  height: 100%;
+  margin-top: 10rem;
+}
+
+.sort_list {
+  margin-top: 1.5rem;
+  display: flex;
+  -webkit-box-pack: justify;
+  justify-content: space-between;
+  -webkit-box-align: center;
+  align-items: center;
+  position: relative;
+}
+
+/*메뉴 스타일*/
+.menu {
+  position: absolute;
+  border: 1px solid var(--border3);
+  margin-top: 0.5rem;
+  width: 12rem;
+  top: 5rem;
+  right: 0;
+  box-shadow: rgba(0, 0, 0, 0.1) 0px 0px 8px 0px;
+  background: var(--bg-element1);
+  color: var(--text1);
+}
+.open {
+  transform-origin: right top;
+  animation: slideInMenu 1s ease-in-out forwards; /* 1초 동안 ease-in-out 애니메이션 실행 */
+}
+
+.close {
+  transform-origin: right top;
+  animation: slideOutMenu 1s ease-in-out forwards; /* 닫힘 애니메이션 적용 */
+}
+
+@keyframes slideInMenu {
+  0% {
+    opacity: 0; /* 시작 시 투명도 0 */
+    transform: scale(0);
+  }
+  100% {
+    opacity: 1; /* 종료 시 투명도 1 */
+    transform: scale(1); /* 원래 크기로 확대됨 */
+  }
+}
+
+@keyframes slideOutMenu {
+  0% {
+    opacity: 1; /* 시작 시 투명도 1 */
+    transform: scale(1); /* 원래 크기로 시작 */
+  }
+  100% {
+    opacity: 0; /* 종료 시 투명도 0 */
+    transform: scale(0); /* 세로 방향으로 접혀서 사라짐 */
+  }
 }
