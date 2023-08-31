@@ -6,6 +6,7 @@ import DrawerLayout from './src/component/form/DrawerLayout';
 import SignIn from './src/component/pages/SignIn';
 import {NavigationContainer} from '@react-navigation/native';
 import StackNavigator from '../frontend/src/component/navigator/StackNavigator';
+import NoticeDetatilScreen from './src/component/form/NoticeDetailScreen'
 
 export default function App() {
   return (
@@ -13,7 +14,6 @@ export default function App() {
    <StatusBar style="black" />
     <StackNavigator />
     </NavigationContainer>
- 
    
   );
 }

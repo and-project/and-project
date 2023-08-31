@@ -1,113 +1,188 @@
 import React, {useState, useEffect} from 'react'
 import {View, 
     Text, 
-    SafeAreaView, 
-    TextInput, 
+    SafeAreaView,  
     StyleSheet,
-    TouchableOpacity
+    TextInput,
+    TouchableOpacity,
+    KeyboardAvoidingView
     } from 'react-native';
 import Checkbox from 'expo-checkbox';
+import { widthPercentageToDP as wp, heightPercentageToDP as hp } from 'react-native-responsive-screen';
+import axios from 'axios';
+import { POST_NOTICE_URL } from '../../env';
+import StackNavigator from '../navigator/StackNavigator';
+import MainPage from '../main/MainPage';
 
-export default function SignIn() {
+export default function SignIn({navigation}) {
 
-const [isChecked, setChecked] = useState(false);
-const [id, setId] = useState('');
-const [pw, setPw] = useState('');
+  const baseURL = POST_NOTICE_URL
 
-  return (
-    <SafeAreaView
-      style={{
-        flex: 1,
-        borderWidth: 1,
-        justifyContent: "center",
-        alignItems: "center",
-      }}
-    >
-      <Text style={{ fontSize: 20 }}>아파트 입주민</Text>
-      <Text style={{ fontSize: 15, color: "blue", fontWeight: "bold" }}>커뮤니티</Text>
+ const [id, setId] = useState('');
+ const [pw, setPw] = useState('');
 
-      <View
-        style={{
-          borderWidth: 0.8,
-          height: 400,
-          width: 350,
-          marginTop: 10,
-          alignItems: "center",
-        }}
-      >
-        <TextInput
-          style={[styles.textInputStyle, {marginTop:30,}]}
-          placeholder="아이디를 입력하세요."
-          value={id}
-          onChangeText={setId}
-        />
+//  onHandlerClick = ()=>{
+//   axios.post(`${baseURL}`, {
+//     loginId : id,
+//     pw : pw,
+//   })
+//   .then((response)=>{
+//     console.log(response.data)
+//     navigation.navigate('메인페이지')})
+//   .catch((error)=>console.log(error))
+//  }
 
-        <TextInput
-          style={[styles.textInputStyle, { marginTop: 20 }]}
-          placeholder="비밀번호를 입력하세요."
-          value={pw}
-          onChangeText={setPw}
-          secureTextEntry={true}
-        />
 
-        <View style={{width:200, flexDirection:'row', justifyContent:'center', alignItems:'center', marginTop:20,}}>
-          <Checkbox
-            style={styles.checkbox}
-            value={isChecked}
-            onValueChange={setChecked}
-            color={isChecked ? "gray" : undefined}
-          />
-          <Text style={{paddingLeft:10,}}>자동으로 연결하기</Text>
-        </View>
+// onHandlerClick= () =>{
+//   fetch(`${baseURL}`, {
+//   method: 'POST',
+//   headers: {
+//     'Content-Type': 'application/json',
+//   },
+//   body: JSON.stringify({ loginId: id, pw: pw }),
+// })
+//   .then((response) => response.json())
+//   .then((json) => console.log(json))
+//   .catch((error) => console.log(error));
+// }
 
-        <View style={{marginTop: 20,}}>
-            <TouchableOpacity style={styles.buttonStyle}>
-                <Text style={styles.buttonText}>로그인</Text>
-            </TouchableOpacity>
-            
-            <View style = {{flexDirection:'row', justifyContent:'center', marginTop:20,}}>
-                <TouchableOpacity style={{paddingRight: 20,}}>
-                    <Text style={{fontSize:15,}}>아이디 찾기</Text>
-                </TouchableOpacity>
-                <Text style={{fontSize:15,}}>/</Text>
-                <TouchableOpacity style={{paddingLeft: 20,}}>
-                    <Text style={{fontSize:15,}}>비밀번호 찾기</Text>
-                </TouchableOpacity>
-            </View>
-            
-        </View>
-      </View>
+// console.log(id, pw)
+// User(id=1, apart=null, loginId=test, pw=test!, nick=null, creationTime=n
+
+
+onHandlerClick = () => {
+  fetch('https://jsonplaceholder.typicode.com/posts', {
+  method: 'POST',
+  body: JSON.stringify({
     
-        
-    </SafeAreaView>
-  );
+    body: {
+      id : id,
+      pw : pw,
+    }
+    
+  }),
+  headers: {
+    'Content-type': 'application/json',
+  },
+})
+  .then((response) => response.json())
+  .then((json) => console.log(json))
+  .then(()=>{navigation.navigate('메인페이지')})
+  .catch((error)=>console.log(error))
 }
 
+
+  return(
+    <SafeAreaView style={styles.container}>
+      <Text style={{fontSize: 20,}}>아파트 입주민</Text>
+      <Text style={{fontSize : 25, fontWeight: '800', letterSpacing: 8,}}>커뮤니티</Text>
+
+      <KeyboardAvoidingView style={styles.signInContainer}>
+        <Text style={{fontSize: 20, letterSpacing: 10,}}>로그인</Text>
+        <View style={{borderWidth:0, height: hp('20%'), justifyContent: 'center', alignItems:'center', marginTop: 10,}}>
+          <TextInput style={styles.TextInputContainer}
+            clearTextOnFocus={true}
+            placeholder='아이디를 입력하세요.'
+            value={id}
+            onChangeText={setId}/>
+
+          <TextInput style={[styles.TextInputContainer, {marginTop: 30,}]}
+            clearTextOnFocus={true}
+            placeholder='비밀번호를 입력하세요.'
+            secureTextEntry={true}
+            value={pw}
+            onChangeText={setPw}/>
+        </View> 
+
+        <View style={styles.signInUpContainer}>
+          <TouchableOpacity onPress={onHandlerClick}
+            style={styles.buttonStyle}>
+            <Text style={styles.buttonText}>로그인</Text>
+          </TouchableOpacity>
+
+          <View style={styles.signInUpContainer2}>
+            <TouchableOpacity><Text style={styles.buttonText2}>회원가입</Text></TouchableOpacity>
+            <Text>|</Text>
+            <TouchableOpacity><Text style={styles.buttonText2}>아이디 찾기</Text></TouchableOpacity>
+            <Text>|</Text>
+            <TouchableOpacity><Text style={styles.buttonText2}>비밀번호 찾기</Text></TouchableOpacity>
+          </View>
+          
+        </View>
+      </KeyboardAvoidingView>
+    </SafeAreaView>
+  )
+}
+
+
 const styles = StyleSheet.create({
-    textInputStyle : {
-        borderWidth:1,
-        width: 250,
-        height: 40,
-        backgroundColor : 'lightgray',
-        opacity: 0.7,
-        paddingLeft: 10,
-        borderRadius: 5,
-    },
+  container : {
+    flex:1,
+    justifyContent: 'center',
+    alignItems : 'center',
+  },
+  signInContainer: {
+    borderWidth : 1,
+    height : hp('70%'),
+    width : wp('90%'),
+    marginTop: 10,
+    justifyContent: 'center',
+    alignItems : 'center'
+  },
 
-    buttonStyle : {
-        borderWidth: 0,
-        height: 35,
-        width: 250,
-        borderRadius: 5,
-        justifyContent:'center',
-        backgroundColor : 'yellow',
-        opacity: 0.7,
+  TextInputContainer : {
+    borderBottomWidth: 1,
+    backgroundColor: '#dcdcdc',
+    opacity: 0.8,
+    height: 50,
+    width: wp('70%'),
     
-    },
+  },
 
-    buttonText : {
-        fontSize: 16,
-        alignSelf: 'center',
-        fontWeight:'600'
-    }
+  textStyle : {
+    textAlign: 'center',
+    alignSelf : 'center',
+    paddingLeft: 10,
+  },
+
+  signInUpContainer : {
+    borderWidth : 0,
+    height : hp('10%'),
+    width : wp('70%'),
+    marginTop: 20,
+    justifyContent: 'space-around',
+    alignItems : 'center',
+  },
+
+  buttonStyle : {
+    borderWidth : 0,
+    backgroundColor : 'yellow',
+    opacity : 0.6,
+    height : hp('5%'),
+    width : wp('60%'),
+    justifyContent: 'center',
+    alignItems : 'center',
+    borderRadius : 5,
+  },
+
+  buttonText : {
+    fontSize : 15,
+    fontWeight : '800',
+    letterSpacing : 3,
+  },
+
+  signInUpContainer2 : {
+    flexDirection : 'row', 
+    borderWidth : 0, 
+    width : wp('50%'), 
+    height : hp('3%'), 
+    marginTop : 15,
+    justifyContent : 'space-around',
+    alignItems : 'center',
+  },
+
+  buttonText2 : {
+    fontSize : 12,
+  }
+
 })

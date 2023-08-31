@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react'
+import React, { useEffect, useReducer, useState } from 'react'
 import {Text, View, SafeAreaView, ScrollView, TouchableOpacity, StyleSheet, FlatList} from 'react-native';
 import { widthPercentageToDP as wp, heightPercentageToDP as hp } from 'react-native-responsive-screen';
 import axios from 'axios';
@@ -6,12 +6,11 @@ import { useNavigation } from '@react-navigation/native';
 import {GET_NOTICE_URL} from '../../env'
 import { Button } from 'react-native-paper';
 import { MaterialCommunityIcons } from '@expo/vector-icons';
-import NoticeModal from '../form/NoticeModal';
 
 
-export default function NoticePage() {
+export default function NoticePage({navigation, route}) {
 
-  const navigation = useNavigation();
+  // const navigation = useNavigation();
 
   const baseURL = GET_NOTICE_URL;
 
@@ -20,13 +19,14 @@ export default function NoticePage() {
   const [username, setUserName] = useState('');
   const [phone, setPhone] = useState('')
 
+
 useEffect(()=>{
   axios.get(`http://jsonplaceholder.typicode.com/users`)
   .then((response)=> setFetchData(response.data))
   .catch((error)=> console.log(error))
 }, [])
 
-console.log(fetchData)
+
 
 
   return (
@@ -49,6 +49,7 @@ console.log(fetchData)
                 id : value.id,
                 username : value.username,
                 phone : value.phone,
+                email : value.email
               })}}
               
                 style={[styles.noticeContainer, {flexDirection:'row'}]}>
