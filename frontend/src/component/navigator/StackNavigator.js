@@ -7,7 +7,6 @@ import MainPage from '../main/MainPage';
 import SignIn from '../pages/SignIn';
 import NoticePage from '../pages/NoticePage';
 import SignUp from '../pages/SignUp';
-import TestPage from '../pages/TestPage'
 import NoticeDetailScreen from '../form/NoticeDetailScreen';
 
 
@@ -37,7 +36,6 @@ const StackNavigator = () =>{
             <Stack.Screen name='로그인페이지' component={SignIn}/>
             <Stack.Screen name='공지게시판' component={NoticePage}/>
             <Stack.Screen name='회원가입' component={SignUp}/>
-            <Stack.Screen name='테스트페이지' component={TestPage}/>
             <Stack.Screen name='공지상세페이지' component={NoticeDetailScreen}/>
 
 

@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from 'react';
 import {Text, View, StyleSheet, SafeAreaView} from 'react-native';
-import NoticePage from '../pages/NoticePage';
 import axios from 'axios';
 import { widthPercentageToDP as wp, heightPercentageToDP as hp } from 'react-native-responsive-screen';
 
