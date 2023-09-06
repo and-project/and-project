@@ -23,7 +23,7 @@ const StackNavigator = () =>{
             screenOptions={{
                 headerStyle: {
                     backgroundColor: "white",
-                    borderBottomColor: "whitek",
+                    borderBottomColor: "white",
                     shadowColor: "white",
                     height:70,
                 },

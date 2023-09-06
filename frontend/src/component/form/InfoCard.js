@@ -8,7 +8,7 @@ import { useNavigation } from '@react-navigation/native';
 
 export default function InfoCard() {
 
-
+const navigation = useNavigation()
 
   return (
     <View style={styles.container}>
@@ -23,7 +23,7 @@ export default function InfoCard() {
                 <Text style={{fontSize : 20,}}>로그인을 해주세요.</Text>
             </View>
             <View style={styles.infoLogin}>
-                <TouchableOpacity>
+                <TouchableOpacity onPress={()=>{navigation.navigate('로그인페이지')}}>
                     <MaterialIcons name="login" size={50} color="black" />
                 </TouchableOpacity>
             </View>

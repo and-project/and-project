@@ -1,85 +1,72 @@
-import React, {useRef} from 'react';
-import {View, Text, Animated, StyleSheet} from 'react-native';
-import favicon from '../../../assets/favicon.png';
-import MaskedView from '@react-native-masked-view/masked-view';
-import MainPage from '../main/MainPage';
-import splash from '../../../assets/splash.png'
-
-export default class LoadingPage extends React.Component{
-  state = {
-    loadingProgress: new Animated.Value(0),
-    animationDone: false
-  };
+import React from 'react';
+import {View, Text, StyleSheet, Image, backgroundImage} from 'react-native';
+import loadingImage from '../../../assets/loadingImage.jpg';
+import { widthPercentageToDP as wp, heightPercentageToDP as hp } from 'react-native-responsive-screen';
+import { ImageBackground } from 'react-native';
 
 
-  componentDidMount(){
-    Animated.timing(this.state.loadingProgress,{
-      toValue: 100,
-      duration: 1000,
-      useNativeDriver: true,
-      delay: 400
-    }).start(()=>{
-      this.setState({animationDone: true})
-    })
-  }
 
-  render(){
+// <View style={styles.container}>
+// <View style={styles.titleContainer}>
+//   <Text>asdaasdasdsds</Text>
+// </View>
 
-    const colorLayer = this.state.animationDone ? null : <View style = {[StyleSheet.absoluteFill, {backgroundColor: '#7F23D9'}]}/>
-    const whiteLayer = this.state.animationDone ? null : <View style = {[StyleSheet.absoluteFill, {backgroundColor: '#FFF'}]}/>
-
-    const imageScale = {
-      transform: [
-        {
-          scale: this.state.loadingProgress.interpolate({
-            inputRange: [0, 15, 100],
-            outputRange: [0.1, 0.06, 16]
-          })
-        }
-      ]
-    }
+// <View style={styles.imageContainer}>
+//   <Image source={require('../../../assets/loadingImage.jpg')}/>
+// </View>
+// </View>
 
 
-    const opacity = {
-      opacity: this.state.loadingProgress.interpolate({
-        inputRange: [0, 25, 50],
-        outputRange: [0, 0, 1],
-        extrapolate: 'clamp'
-      })
-    }
 
-    return(
-      <View style={{flex:1,}}>
-        {colorLayer}
-        <MaskedView style={{flex:1}} maskElement={
-          <View style={styles.centered}>
-            <Animated.Image 
-              source={require('../../../assets/favicon.png')}
-              // 메인 사진 들어갈 곳
-              style={[{ width: 1000 }, imageScale]}
-              resizeMode="contain"
-              />
 
-          </View>
-        }>
-          {whiteLayer}
-          <Animated.View style = {[opacity, styles.centered]}>
-            <Animated.Image source={splash}/>
-            {/* 메인사진 들어갈 곳 */}
-          </Animated.View>
+export default function LoadingPage() {
 
-        </MaskedView>
 
+
+  return (
+    <ImageBackground style={{ backgroundColor: "black" }}>
+      <View style={styles.container}>
+        <ImageBackground
+          source={require("../../../assets/loadingImage.jpg")}
+          style={styles.bgImage}
+        ></ImageBackground>
       </View>
-    )
-  }
+    </ImageBackground>
+  );
 }
 
 
 const styles = StyleSheet.create({
-  centered:{
-    flex:1,
-    alignItems: 'center',
-    justifyContent: 'center'
-  }
+ container : {
+  borderWidth : 1,
+  height : hp('100%'),
+  width : wp('100'),
+  backgroundColor : 'rgba(0, 0, 0, 0.2)',
+ 
+
+ },
+
+ bgImage : {
+  flex:1,
+  resizeMode : 'contain',
+  width : wp('100%'),
+  backgroundColor : 'black',
+  opacity : 0.7,
+  psotion : 'ablsolute'
+  
+ },
+
+ titleContainer : {
+  height : hp('30')
+ },
+
+
+
+
+
+
+ imageContainer : {
+  resizeMode : 'contain',
+  width : wp('100%')
+ }
 })

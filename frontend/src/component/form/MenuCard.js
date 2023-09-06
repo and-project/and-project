@@ -2,13 +2,17 @@ import React from 'react';
 import {View, Text, TouchableOpacity, StyleSheet} from 'react-native';
 import { widthPercentageToDP as wp, heightPercentageToDP as hp } from 'react-native-responsive-screen';
 import { MaterialCommunityIcons, MaterialIcons, Entypo, FontAwesome5 } from '@expo/vector-icons';
+import { useNavigation } from '@react-navigation/native';
 
 
 export default function MenuCard() {
+
+const navigation = useNavigation();
+
   return (
     <View style={styles.container}>
         <View style={styles.upperContainer}>
-            <TouchableOpacity
+            <TouchableOpacity onPress={()=>{navigation.navigate('공지게시판')}}
                 style={[styles.menuButton, {backgroundColor:'cornsilk'}]}>
                 <MaterialIcons name="announcement" size={20} color="black" />
                 <Text>공지</Text>
