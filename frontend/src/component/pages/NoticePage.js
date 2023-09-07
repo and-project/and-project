@@ -16,17 +16,23 @@ export default function NoticePage({navigation, route}) {
 
   const [fetchData, setFetchData] = useState([]);
 
-  const [username, setUserName] = useState('');
-  const [phone, setPhone] = useState('')
+  const [selectors, setSelectors] = useState([])
 
 
 useEffect(()=>{
   axios.get(`http://jsonplaceholder.typicode.com/users`)
-  .then((response)=> setFetchData(response.data))
+  .then((response)=> {setFetchData(response.data)
+  setSelectors(response.data)})
   .catch((error)=> console.log(error))
 }, [])
 
-
+const selectorDong = (selectorButton) => {
+  if(selectorButton == '전체보기'){
+    return setSelectors(fetchData);
+  }else{
+    return setSelectors(fetchData.filter(d => d.username == selectorButton))
+  }
+}
 
 
   return (
@@ -36,26 +42,30 @@ useEffect(()=>{
        </View>
           
         <View style={{ height:60, width:wp('100%'), flexDirection:'row', justifyContent:'space-around'}}>
-        <TouchableOpacity style={styles.cateButton}><Text>전체보기</Text></TouchableOpacity>
+        <TouchableOpacity onPress={()=> selectorDong('전체보기')} style={styles.cateButton}><Text>전체보기</Text></TouchableOpacity>
+        <TouchableOpacity onPress={()=> selectorDong("Bret")} style={styles.cateButton}><Text>우리동 보기</Text></TouchableOpacity>
         <TouchableOpacity style={styles.cateButton}><Text>새글보기</Text></TouchableOpacity>
        
         </View>
 
       <ScrollView>
         {
-          fetchData.map((value)=>{
+          selectors.map((value)=>{
             return(
               <TouchableOpacity onPress={()=>{navigation.navigate('공지상세페이지', {
                 id : value.id,
                 username : value.username,
                 phone : value.phone,
-                email : value.email
+                email : value.email,
+                city : value.city
               })}}
               
                 style={[styles.noticeContainer, {flexDirection:'row'}]}>
                 <View style={{borderWidth:0, width: 250, justifyContent:'center'}}>
-                  <Text style={{fontSize:15,}}>{value.name}</Text>
-                  <Text>{value.email}</Text>
+                  <Text>{value.id}</Text>
+                  <Text style={{fontSize:10,}}>{value.email}</Text>
+                  <Text>{value.username}</Text>
+                  <Text>{value.city}</Text>
                 </View>
                 <View
                   style={{alignSelf:'center', marginRight:10,}}>

@@ -11,6 +11,7 @@ export default function NoticeModal({navigation, route}) {
     const {username} = route.params
     const {phone} = route.params
     const {email} = route.params
+    const {city} = route.params
 
     
       return (
@@ -28,6 +29,7 @@ export default function NoticeModal({navigation, route}) {
             </View>
             <Text>Phone number : {phone}</Text>
             <Text>User email : {email}</Text>
+            <Text>User city : {city}</Text>
           </View>
         </SafeAreaView>
       );
