@@ -15,43 +15,44 @@ const navigation = useNavigation();
             <TouchableOpacity onPress={()=>{navigation.navigate('공지게시판')}}
                 style={[styles.menuButton, {backgroundColor:'cornsilk'}]}>
                 <MaterialIcons name="announcement" size={20} color="black" />
-                <Text>공지</Text>
+                <Text style={styles.textStyle}>공지</Text>
             </TouchableOpacity>
 
             <TouchableOpacity style={[styles.menuButton, {marginLeft:40, backgroundColor:'khaki'}]}>
                 <MaterialIcons name="how-to-vote" size={20} color="black" />
-                <Text>투표</Text>
+                <Text style={styles.textStyle}>투표</Text>
             </TouchableOpacity>
 
-            <TouchableOpacity style={[styles.menuButton, {marginLeft:40, backgroundColor:'lawngreen'}]}>
+            <TouchableOpacity onPress={()=>{navigation.navigate('나눔&구매페이지')}}
+                style={[styles.menuButton, {marginLeft:40, backgroundColor:'lawngreen'}]}>
                 <Entypo name="slideshare" size={20} color="black" />
-                <Text>나눔&구매</Text>
+                <Text style={{fontSize:11,}}>나눔&구매</Text>
             </TouchableOpacity>
             <TouchableOpacity style={[styles.menuButton, {marginLeft:40, backgroundColor:'lawngreen'}]}>
                 <Entypo name="slideshare" size={20} color="black" />
-                <Text>민원</Text>
+                <Text style={styles.textStyle}>민원</Text>
             </TouchableOpacity>
         </View>
         <View style={styles.lowerContainer}>
             <TouchableOpacity
             style={[styles.menuButton, {backgroundColor:'cornsilk',}]}>
                 <MaterialCommunityIcons name="door-closed-lock" size={20} color="black" />
-                <Text>문열기</Text>
+                <Text style={styles.textStyle}>문열기</Text>
           </TouchableOpacity>
 
             <TouchableOpacity style={[styles.menuButton, {marginLeft:40, backgroundColor:'thistle'}]}>
                 <MaterialCommunityIcons name="cctv" size={20} color="black" />
-                    <Text>현관보기</Text>
+                    <Text style={styles.textStyle}>현관보기</Text>
             </TouchableOpacity>
 
             <TouchableOpacity style={[styles.menuButton, {marginLeft:40, backgroundColor:'powderblue'}]}>
                 <FontAwesome5 name="hands-helping" size={20} color="black" />
-                <Text>헬퍼</Text>
+                <Text style={styles.textStyle}>헬퍼</Text>
             </TouchableOpacity>
 
             <TouchableOpacity style={[styles.menuButton, {marginLeft:40, backgroundColor:'powderblue'}]}>
                 <FontAwesome5 name="hands-helping" size={20} color="black" />
-                <Text>헬퍼</Text>
+                <Text style={styles.textStyle}>헬퍼</Text>
             </TouchableOpacity>
 
         </View>
@@ -86,8 +87,8 @@ lowerContainer : {
 
 menuButton: {
     borderWidth:0,
-    height: 60,
-    width: 75,
+    height: hp('7%'),
+    width: wp('13%'),
     borderRadius: 20,
     justifyContent: 'center',
     alignItems: 'center',
@@ -100,7 +101,11 @@ menuButton: {
     },
     elevation: 6,
     opacity : 1
-  }
+  },
+
+  textStyle : {
+    fontSize : 12,
+}
 
 
 })

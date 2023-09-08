@@ -8,7 +8,7 @@ import MenuCard from '../form/MenuCard';
 import NoticeCard from '../form/NoticeCard';
 import LoadingPage from '../pages/LoadingPage'
 import { useNavigation } from '@react-navigation/native';
-
+import BottomNavigator from '../navigator/BottomNavigator';
 
 export default function MainPage() {
 
@@ -32,9 +32,12 @@ useEffect(()=>{
                 <MenuCard/>
 
                 <NoticeCard/>
+
+                
             
         
     </ImageBackground>
+    <BottomNavigator/>
    </View>
   )
 }
@@ -42,14 +45,13 @@ useEffect(()=>{
 
 const styles = StyleSheet.create({
     container : {
-        height : hp('100%'),
-        width : wp('100%'),
-        borderWidth : 1,
+        flex : 1,
+      
+        
     },
 
     bgImage : {
-        height : hp('100%'),
-        width : wp('100%'),
+        flex:1,
         backgroundColor : 'rgba(0, 0, 0, 0)',
         resizeMode : 'cover'
     },
@@ -57,7 +59,7 @@ const styles = StyleSheet.create({
     titleText : {
         fontSize : 20,
         alignSelf : 'center',
-        marginTop : 20,
+        marginTop : 0,
     },
 
     titleText2 : {

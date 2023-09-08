@@ -9,14 +9,20 @@ import NoticeDetatilScreen from './src/component/form/NoticeDetailScreen'
 import InfoCard from './src/component/form/InfoCard';
 import MenuCard from './src/component/form/MenuCard'
 import NoticeCard from './src/component/form/NoticeCard';
+import ShareAndBuyModal from './src/component/pages/ContentShareBuy';
+import FloatingButton from './src/component/form/FloatingButton';
 
 export default function App() {
+
+  
+
   return (
-    <NavigationContainer>
-   <StatusBar style="black" />
-    <StackNavigator />
-    </NavigationContainer>
- 
+  <NavigationContainer>
+    
+  <StatusBar style="black" />
+  <StackNavigator />
+  </NavigationContainer>
+
   );
 }
 

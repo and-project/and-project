@@ -6,6 +6,7 @@ import { useNavigation } from '@react-navigation/native';
 import {GET_NOTICE_URL} from '../../env'
 import { Button } from 'react-native-paper';
 import { MaterialCommunityIcons } from '@expo/vector-icons';
+import BottomNavigator from '../navigator/BottomNavigator';
 
 
 export default function NoticePage({navigation, route}) {
@@ -35,8 +36,9 @@ const selectorDong = (selectorButton) => {
 }
 
 
+
   return (
-    <SafeAreaView style={{ borderWidth:1, width: wp('100%'), height:hp('100%')}}>
+    <View style={{ borderWidth:1, width: wp('100%'), height:hp('100%')}}>
        <View style={{height: 50, justifyContent:'center', alignItems:'center', backgroundColor:'lightgray'}}>
         <Text style={{fontSize:20,}}>공지사항</Text>
        </View>
@@ -61,7 +63,7 @@ const selectorDong = (selectorButton) => {
               })}}
               
                 style={[styles.noticeContainer, {flexDirection:'row'}]}>
-                <View style={{borderWidth:0, width: 250, justifyContent:'center'}}>
+                <View key={value.id} style={{borderWidth:0, width: 250, justifyContent:'center'}}>
                   <Text>{value.id}</Text>
                   <Text style={{fontSize:10,}}>{value.email}</Text>
                   <Text>{value.username}</Text>
@@ -77,12 +79,13 @@ const selectorDong = (selectorButton) => {
             )
           })
         }
+        
       </ScrollView>
-      
 
-   
+      <BottomNavigator/>
+    </View>
 
-    </SafeAreaView>
+    
   )
 }
 

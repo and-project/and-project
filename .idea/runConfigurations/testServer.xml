@@ -1,0 +1,10 @@
+<component name="ProjectRunConfigurationManager">
+  <configuration default="false" name="testServer" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
+    <option name="INCLUDE_PROVIDED_SCOPE" value="false" />
+    <module name="and-project" />
+    <option name="SPRING_BOOT_MAIN_CLASS" />
+    <method v="2">
+      <option name="Make" enabled="true" />
+    </method>
+  </configuration>
+</component>
