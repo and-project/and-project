@@ -21,17 +21,7 @@ export default function BottomNavigator (){
                 
 
             }}>
-                <View style={{ position: 'absolute',justifyContent:'center', alignSelf: 'center', width: wp('5%'), height: hp('5%'), borderRadius: 0, bottom: 30, zIndex: 10 }}>
-                    <Icon
-                        name='add'
-                        type='material'
-                        color='#f00'
-                        containerStyle={{ alignSelf: 'center' }}
-                        reverse
-                        size={22}
-                        onPress={() => {}}
-                    />
-                </View>
+                
 
                 <View style={styles.container}>
                     <TouchableOpacity style={styles.buttonStyle}
@@ -56,7 +46,8 @@ export default function BottomNavigator (){
                         </View>
                     </TouchableOpacity>
 
-                    <TouchableOpacity style={styles.buttonStyle}>
+                    <TouchableOpacity onPress={()=>{navigation.navigate('마이페이지')}}
+                        style={styles.buttonStyle}>
                         <View style={styles.menuButton}> 
                             <Icon name='person' type='material' color='#fff' size={22}/>
                             <Text style={[styles.menuText, {fontSize : 9}]}>마이페이지</Text>

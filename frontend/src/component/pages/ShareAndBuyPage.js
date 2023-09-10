@@ -93,7 +93,7 @@ const styles = StyleSheet.create({
         flexDirection : 'row',
         marginTop : 10,
         borderRadius : 10,
-        elevation : 2,
+        elevation : 1,
         alignSelf : 'center'
 
     }

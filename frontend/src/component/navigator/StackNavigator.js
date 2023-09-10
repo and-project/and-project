@@ -12,6 +12,7 @@ import ShareAndBuyPage from '../pages/ShareAndBuyPage';
 import ContentShareBuy from '../pages/ContentShareBuy';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import ShareBuyWriting from '../form/ShareBuyWriting';
+import MyPage from '../pages/MyPage';
 
 //스택 네비게이션 라이브러리가 제공하는 여러 기능이 담겨있는 객체를 사용하기 위해 상단에 선언하고 시작하는게 규칙!
 const Stack = createStackNavigator();
@@ -45,6 +46,7 @@ const StackNavigator = () =>{
             <Stack.Screen name='나눔&구매페이지' component={ShareAndBuyPage}/>
             <Stack.Screen name='나눔&구매 상세페이지' component={ContentShareBuy}/>
             <Stack.Screen name='나눔&구매 글쓰기' component={ShareBuyWriting}/>
+            <Stack.Screen name='마이페이지' component={MyPage}/>
 
 
 
