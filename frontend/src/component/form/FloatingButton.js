@@ -98,8 +98,8 @@ const styles = StyleSheet.create({
         justifyContent : 'flex-end',
         alignItems : 'flex-end',
         position : 'absolute',
-        marginTop : 850,
-        marginLeft : 650,
+        bottom : 100,
+        right : 10,
       
     },
 
@@ -124,7 +124,6 @@ const styles = StyleSheet.create({
     menu : {
         backgroundColor : 'lightpink',
         opacity : 0.8,
-        marginLeft: 240,
         
         
     },
