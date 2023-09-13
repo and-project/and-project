@@ -98,17 +98,18 @@ const styles = StyleSheet.create({
         justifyContent : 'flex-end',
         alignItems : 'flex-end',
         position : 'absolute',
-        bottom : 100,
+        bottom : 30,
         right : 10,
       
     },
 
     button : {
         position: 'absolute',
-        width : 50,
-        height : 50,
+        width : 45,
+        height : 45,
         borderWidth : 0,
         backgroundColor : 'lightpink',
+        elevation : 2,
         opacity : 0.8,
         borderRadius : 48/3,
         alignItems : 'center',
@@ -123,14 +124,14 @@ const styles = StyleSheet.create({
 
     menu : {
         backgroundColor : 'lightpink',
-        opacity : 0.8,
+        opacity : 1,
         
         
     },
 
     secondary : {
-        width : 45,
-        height : 45,
+        width : 40,
+        height : 40,
        marginLeft : 2,
        borderRadius : 48/3,
         

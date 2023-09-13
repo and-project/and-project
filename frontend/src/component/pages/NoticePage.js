@@ -82,7 +82,6 @@ const selectorDong = (selectorButton) => {
         
       </ScrollView>
 
-      <BottomNavigator/>
     </View>
 
     

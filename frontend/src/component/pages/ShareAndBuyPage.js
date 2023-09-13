@@ -48,11 +48,11 @@ export default function ShareAndBuyPage() {
 
                 <View style={{borderWidth:0,width:wp('65%')}}>
                     <View style={{height:hp('5%'), justifyContent:'center', paddingLeft:10, borderBottomWidth:1,}}>
-                        <Text style={{fontWeight:'600'}}>{value.phone}</Text>
+                        <Text style={{fontWeight:'600', fontSize: 12,}}>{value.phone}</Text>
                     </View>
                     <View style={{borderWidth:0, flexDirection:'row', height:hp('9.5%'), justifyContent:'space-between', paddingLeft:10, paddingRight:10,alignItems:'center'}}>
                         <View>
-                            <Text style={{fontSize:17,}}>{value.email}</Text>
+                            <Text style={{fontSize:13,}}>{value.email}</Text>
                         </View>
                         <View style={{flexDirection:'row'}}>
                             <Text style={{fontSize:12}}>금액</Text>
@@ -71,7 +71,6 @@ export default function ShareAndBuyPage() {
      
     </ScrollView>
       <FloatingButton/>
-      <BottomNavigator/>
       
     </View>
      
@@ -84,6 +83,7 @@ export default function ShareAndBuyPage() {
 const styles = StyleSheet.create({
     container : {
         flex : 1,
+        elevation : 1,
     },
 
     cardContainer : {
@@ -93,7 +93,7 @@ const styles = StyleSheet.create({
         flexDirection : 'row',
         marginTop : 10,
         borderRadius : 10,
-        elevation : 1,
+        elevation : 0,
         alignSelf : 'center'
 
     }

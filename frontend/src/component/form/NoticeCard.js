@@ -44,11 +44,11 @@ export default function NoticeCard() {
 const styles = StyleSheet.create({
     container : {
         borderWidth : 1,
-        height : hp('25%'),
+        height : hp('27%'),
         width : wp('70%'),
         alignSelf : 'center',
         borderRadius : 10,
-        marginTop : 30,
+        marginTop : 10,
         elevation : 15,
         backgroundColor : 'white'
     },

@@ -37,7 +37,6 @@ useEffect(()=>{
             
         
     </ImageBackground>
-    <BottomNavigator/>
    </View>
   )
 }
@@ -46,7 +45,8 @@ useEffect(()=>{
 const styles = StyleSheet.create({
     container : {
         flex : 1,
-      
+        height : hp('100%'),
+        borderWidth: 0,
         
     },
 
@@ -60,6 +60,7 @@ const styles = StyleSheet.create({
         fontSize : 20,
         alignSelf : 'center',
         marginTop : 0,
+      
     },
 
     titleText2 : {

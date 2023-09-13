@@ -1,11 +1,22 @@
-import React from 'react';
+import React, { useState } from 'react';
 import {View, Text, TouchableOpacity, StyleSheet} from 'react-native';
 import { widthPercentageToDP as wp, heightPercentageToDP as hp } from 'react-native-responsive-screen';
 import { MaterialCommunityIcons, MaterialIcons, Entypo, FontAwesome5 } from '@expo/vector-icons';
 import { useNavigation } from '@react-navigation/native';
+import Helper from '../modal/Helper';
 
 
 export default function MenuCard() {
+
+const [modalVisible, setModalVisible] = useState(false)
+
+const openModal = () => {
+    setModalVisible(true);
+};
+
+const closeModal = () => {
+    setModalVisible(false);
+};
 
 const navigation = useNavigation();
 
@@ -50,12 +61,16 @@ const navigation = useNavigation();
                 <Text style={styles.textStyle}>헬퍼</Text>
             </TouchableOpacity>
 
-            <TouchableOpacity style={[styles.menuButton, {marginLeft:40, backgroundColor:'powderblue'}]}>
+            <TouchableOpacity onPress={openModal}
+                style={[styles.menuButton, {marginLeft:40, backgroundColor:'powderblue'}]}>
                 <FontAwesome5 name="hands-helping" size={20} color="black" />
                 <Text style={styles.textStyle}>헬퍼</Text>
             </TouchableOpacity>
-
         </View>
+        <Helper
+            modalVisible = {modalVisible}
+            closeModal = {closeModal}
+        />
     </View>
   )
 }
@@ -66,7 +81,7 @@ container : {
     height : hp('20%'),
     width : wp('70%'),
     alignSelf : 'center',
-    marginTop : 30,
+    marginTop : 10,
     borderRadius : 10,
  
 },

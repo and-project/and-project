@@ -75,7 +75,7 @@ export default function MyPage() {
                   <MaterialCommunityIcons name="typewriter" size={20} color="black" />
                 </View>
                 <View style={{left:10, alignSelf:'center'}}>
-                  <Text sytle={styles.buttonText}>계정관리</Text>
+                  <Text sytle={styles.buttonText}>sad</Text>
                 </View>
               </View>
               <View>
@@ -129,11 +129,11 @@ export default function MyPage() {
                 <MaterialIcons name="keyboard-arrow-right" size={24} color="black" />
               </View>
             </TouchableOpacity>
+            
 
 
           </View>
         </View>
-        <BottomNavigator/>
      
     </SafeAreaView>
   )

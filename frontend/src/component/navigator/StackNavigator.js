@@ -17,7 +17,6 @@ import MyPage from '../pages/MyPage';
 //스택 네비게이션 라이브러리가 제공하는 여러 기능이 담겨있는 객체를 사용하기 위해 상단에 선언하고 시작하는게 규칙!
 const Stack = createStackNavigator();
 
-
 //stackNavigator 함수: 리액트의 모든 파일이 컴포넌트라 생각하고, 각 컴포넌트가 페이지 기능을 하게끔 만들어주는 함수 생성
 const StackNavigator = () =>{
     return (
@@ -37,6 +36,8 @@ const StackNavigator = () =>{
             }}>
 
             {/* component={} 안에 페이지로 만들 컴포넌트를 넣음. 컴포넌트에 페이지 기능을 부여하는 코드*/}
+
+
             <Stack.Screen name="메인페이지"  component={MainPage}/>
             
             <Stack.Screen name='로그인페이지' component={SignIn}/>
@@ -47,7 +48,6 @@ const StackNavigator = () =>{
             <Stack.Screen name='나눔&구매 상세페이지' component={ContentShareBuy}/>
             <Stack.Screen name='나눔&구매 글쓰기' component={ShareBuyWriting}/>
             <Stack.Screen name='마이페이지' component={MyPage}/>
-
 
 
         </Stack.Navigator>

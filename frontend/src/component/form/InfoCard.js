@@ -15,16 +15,16 @@ const navigation = useNavigation()
         <View style={styles.upperContainer}>
             <View style={styles.infoImage}>
                 <View style={{borderWidth: 1, height : hp('6%'), width:wp('12%'), alignItems:'center', justifyContent:'center', borderRadius:5,}}>
-                    <MaterialCommunityIcons name="account-alert-outline" size={60} color="black"/>
+                    <MaterialCommunityIcons name="account-alert-outline" size={30} color="black"/>
                 </View>
             </View>
             <View style={styles.inforUser}>
-                <Text style={{fontSize : 20,}}>비입주자</Text>
-                <Text style={{fontSize : 20,}}>로그인을 해주세요.</Text>
+                <Text style={{fontSize : 15, fontWeight:'800'}}>비입주자</Text>
+                <Text style={{fontSize : 12,}}>로그인을 해주세요.</Text>
             </View>
             <View style={styles.infoLogin}>
                 <TouchableOpacity onPress={()=>{navigation.navigate('로그인페이지')}}>
-                    <MaterialIcons name="login" size={50} color="black" />
+                    <MaterialIcons name="login" size={25} color="black" />
                 </TouchableOpacity>
             </View>
         </View>
@@ -41,12 +41,12 @@ const navigation = useNavigation()
 const styles = StyleSheet.create({
     container : {
         borderWidth : 1,
-        height : hp('30%'),
+        height : hp('22%'),
         width : wp('70%'),
         alignSelf : 'center',
         backgroundColor : 'lavenderblush',
         borderRadius : 10,
-        marginTop : 30,
+        marginTop : 10,
         elevation : 10,
     },
 
@@ -59,9 +59,9 @@ const styles = StyleSheet.create({
     },
 
     infoImage : {
-        borderWidth : 0,
-        width : wp('20%'),
-        height : hp('10%'),
+        borderWidth : 1,
+        width : wp('15%'),
+        height : hp('8%'),
         justifyContent : 'center',
         alignItems : 'center',
     },
@@ -76,9 +76,19 @@ const styles = StyleSheet.create({
 
     infoLogin : {
         borderWidth : 0,
-        width : wp('10%'),
-        height : hp('10%'),
+        width : wp('13%'),
+        height : hp('5%'),
+        justifyContent : 'center',
         alignItems : 'center',
+        // position : 'absolute',
+        left : 12,
+        backgroundColor : 'lightgray',
+        borderRadius : 10,
+        elevation : 10,
+        shadowColor : 'gray',
+        shadowOffset : {
+            elevation : 2,
+        }
     },
 
 
