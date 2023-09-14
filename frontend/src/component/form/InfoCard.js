@@ -3,12 +3,15 @@ import {View, Text, StyleSheet, TouchableOpacity} from 'react-native';
 import { widthPercentageToDP as wp, heightPercentageToDP as hp } from 'react-native-responsive-screen';
 import { MaterialCommunityIcons, MaterialIcons, Entypo, FontAwesome5 } from '@expo/vector-icons';
 import { useNavigation } from '@react-navigation/native';
+import Helper from '../modal/Helper'
+import HelpForm from './HelpForm';
 
 
 
-export default function InfoCard() {
+export default function InfoCard({isShowMessage}) {
 
 const navigation = useNavigation()
+
 
   return (
     <View style={styles.container}>
@@ -30,7 +33,14 @@ const navigation = useNavigation()
         </View>
        
         <View style={styles.lowerConatiner}>
-            <Text>임시입니다.</Text>
+            {isShowMessage && (
+                <View>
+                <Text>asdas</Text>
+                <TouchableOpacity onPress={stopEmergency}>
+                  <Text>닫기</Text>
+                </TouchableOpacity>
+            </View>
+            )}
         </View>
 
     </View>
@@ -81,7 +91,7 @@ const styles = StyleSheet.create({
         justifyContent : 'center',
         alignItems : 'center',
         // position : 'absolute',
-        left : 12,
+        left : 25,
         backgroundColor : 'lightgray',
         borderRadius : 10,
         elevation : 10,
