@@ -10,7 +10,6 @@ import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import SignIn from './SignIn';
 import NoticePage from './NoticePage';
 import MainPage from '../main/MainPage';
-import BottomNavigator from '../navigator/BottomNavigator';
 
 
 export default function ShareAndBuyPage() {

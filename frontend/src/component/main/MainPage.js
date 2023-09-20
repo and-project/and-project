@@ -8,7 +8,6 @@ import MenuCard from '../form/MenuCard';
 import NoticeCard from '../form/NoticeCard';
 import LoadingPage from '../pages/LoadingPage'
 import { useNavigation } from '@react-navigation/native';
-import BottomNavigator from '../navigator/BottomNavigator';
 
 export default function MainPage() {
 

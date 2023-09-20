@@ -4,9 +4,7 @@ import { widthPercentageToDP as wp, heightPercentageToDP as hp } from 'react-nat
 import axios from 'axios';
 import { useNavigation } from '@react-navigation/native';
 import {GET_NOTICE_URL} from '../../env'
-import { Button } from 'react-native-paper';
 import { MaterialCommunityIcons } from '@expo/vector-icons';
-import BottomNavigator from '../navigator/BottomNavigator';
 
 
 export default function NoticePage({navigation, route}) {

@@ -3,39 +3,11 @@ import {View, Text, TouchableOpacity, StyleSheet} from 'react-native';
 import { widthPercentageToDP as wp, heightPercentageToDP as hp } from 'react-native-responsive-screen';
 import { MaterialCommunityIcons, MaterialIcons, Entypo, FontAwesome5 } from '@expo/vector-icons';
 import { useNavigation } from '@react-navigation/native';
-import Helper from '../modal/Helper';
-import MapView, {Marker} from 'react-native-maps';
-import * as Location from 'expo-location';
-import { Ionicons,  } from '@expo/vector-icons';
+import { Ionicons} from '@expo/vector-icons';
 
 export default function MenuCard() {
 
-  const [location, setLocation] = useState(null);
-  const [showMap, setShowMap] = useState(false);
-
-  
-  const getLocation = async () => {
-    const { status } = await
-      Location.requestForegroundPermissionsAsync();
-    if (status !=='granted') {
-      console.log('Permission to access location was denied');
-    return;
-  }
-    const currentLocation = await
-    Location.getCurrentPositionAsync({});
-      setLocation(currentLocation);
-      setShowMap(true);
-  };
-
-
-const navigation = useNavigation();
-
-const mapController = () => {
-    
-    getLocation();
-    navigation.navigate('헬퍼')
-    
-}
+  const navigation = useNavigation();
 
   return (
     <View style={styles.container}>
@@ -46,7 +18,8 @@ const mapController = () => {
                 <Text style={styles.textStyle}>공지</Text>
             </TouchableOpacity>
 
-            <TouchableOpacity style={[styles.menuButton, {marginLeft:40, backgroundColor:'khaki'}]}>
+            <TouchableOpacity onPress={()=>{navigation.navigate('투표')}}
+            style={[styles.menuButton, {marginLeft:40, backgroundColor:'khaki'}]}>
                 <MaterialIcons name="how-to-vote" size={20} color="black" />
                 <Text style={styles.textStyle}>투표</Text>
             </TouchableOpacity>
@@ -78,7 +51,7 @@ const mapController = () => {
                 <Text style={styles.textStyle}>헬퍼</Text>
             </TouchableOpacity>
 
-            <TouchableOpacity onPress={()=>mapController}
+            <TouchableOpacity onPress={()=>{navigation.navigate('헬퍼')}}
                 style={[styles.menuButton, {marginLeft:40, backgroundColor:'powderblue'}]}>
                 <FontAwesome5 name="hands-helping" size={20} color="black" />
                 <Text style={styles.textStyle}>헬퍼</Text>
