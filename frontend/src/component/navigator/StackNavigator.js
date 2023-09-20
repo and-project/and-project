@@ -49,6 +49,7 @@ const StackNavigator = () =>{
             <Stack.Screen name='나눔&구매 상세페이지' component={ContentShareBuy}/>
             <Stack.Screen name='나눔&구매 글쓰기' component={ShareBuyWriting}/>
             <Stack.Screen name='마이페이지' component={MyPage}/>
+            <Stack.Screen name='헬퍼' component={Helper}/>
 
 
         </Stack.Navigator>

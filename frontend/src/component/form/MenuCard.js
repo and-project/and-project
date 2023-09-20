@@ -4,21 +4,38 @@ import { widthPercentageToDP as wp, heightPercentageToDP as hp } from 'react-nat
 import { MaterialCommunityIcons, MaterialIcons, Entypo, FontAwesome5 } from '@expo/vector-icons';
 import { useNavigation } from '@react-navigation/native';
 import Helper from '../modal/Helper';
-
+import MapView, {Marker} from 'react-native-maps';
+import * as Location from 'expo-location';
+import { Ionicons,  } from '@expo/vector-icons';
 
 export default function MenuCard() {
 
-const [modalVisible, setModalVisible] = useState(false)
+  const [location, setLocation] = useState(null);
+  const [showMap, setShowMap] = useState(false);
 
-const openModal = () => {
-    setModalVisible(true);
-};
+  
+  const getLocation = async () => {
+    const { status } = await
+      Location.requestForegroundPermissionsAsync();
+    if (status !=='granted') {
+      console.log('Permission to access location was denied');
+    return;
+  }
+    const currentLocation = await
+    Location.getCurrentPositionAsync({});
+      setLocation(currentLocation);
+      setShowMap(true);
+  };
 
-const closeModal = () => {
-    setModalVisible(false);
-};
 
 const navigation = useNavigation();
+
+const mapController = () => {
+    
+    getLocation();
+    navigation.navigate('헬퍼')
+    
+}
 
   return (
     <View style={styles.container}>
@@ -61,16 +78,12 @@ const navigation = useNavigation();
                 <Text style={styles.textStyle}>헬퍼</Text>
             </TouchableOpacity>
 
-            <TouchableOpacity onPress={openModal}
+            <TouchableOpacity onPress={()=>mapController}
                 style={[styles.menuButton, {marginLeft:40, backgroundColor:'powderblue'}]}>
                 <FontAwesome5 name="hands-helping" size={20} color="black" />
                 <Text style={styles.textStyle}>헬퍼</Text>
             </TouchableOpacity>
         </View>
-        <Helper
-            modalVisible = {modalVisible}
-            closeModal = {closeModal}
-        />
     </View>
   )
 }
