@@ -15,9 +15,6 @@ import MainPage from '../main/MainPage';
 export default function ShareAndBuyPage() {
 
     const navigation = useNavigation();
-
-  
-
     const [fetchData, setFetchData] = useState([]);
 
     useEffect(()=>{
@@ -82,7 +79,7 @@ export default function ShareAndBuyPage() {
 const styles = StyleSheet.create({
     container : {
         flex : 1,
-        elevation : 1,
+        elevation : 0,
     },
 
     cardContainer : {
