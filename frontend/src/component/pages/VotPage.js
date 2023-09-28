@@ -3,9 +3,12 @@ import React, { useState, useEffect } from 'react'
 import { widthPercentageToDP as wp, heightPercentageToDP as hp } from 'react-native-responsive-screen';
 import { EvilIcons } from '@expo/vector-icons';
 import axios from 'axios';
+import { useNavigation } from '@react-navigation/native';
 
 
 export default function VotPage() {
+
+const navigation = useNavigation();
 
 const [search, setSearch] = useState('')
 
@@ -76,10 +79,15 @@ const voteSelectors = (selectorButton) => {
       <ScrollView
         style={{ alignSelf: "center", marginTop: 10, width: wp("100%") }}
       >
-        {search.length > 0 ? (
+        {
           selectors.map((value) => {
             return(
-            <View style={styles.voteContainer}>
+            <TouchableOpacity onPress={() => {navigation.navigate('투표상세페이지', {
+              username : value.username,
+              email : value.email,
+              phone : value.phone
+            })}}
+              style={styles.voteContainer}>
               <View
                 style={{ flex: 1, justifyContent: "center", paddingLeft: 10 }}
               >
@@ -102,15 +110,9 @@ const voteSelectors = (selectorButton) => {
                   <Text style={styles.voteSubText}>{value.email}</Text>
                 </View>
               </View>
-            </View>)
-          })
-        ) : (
-          <View style={styles.noResultContainer}>
-            <Image style={styles.notFoundImage} source={require('../../../assets/notFound.png')}/>
-            <Text style={[styles.noResultText, {fontSize : 20, letterSpacing:2}]}>결과없음</Text>
-            <Text style={[styles.noResultText]}>죄송합니다. 다른 단어로 검색 해 보시겠어요?</Text>
-          </View>
-        )}
+            </TouchableOpacity>)
+          
+        })}
       </ScrollView>
     </View>
   );
