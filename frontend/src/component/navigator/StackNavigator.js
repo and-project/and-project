@@ -16,6 +16,7 @@ import MyPage from '../pages/MyPage';
 import Helper from '../pages/Helper';
 import VotPage from '../pages/VotPage';
 import VoteDetailsPage from '../pages/VoteDetailsPage';
+import ChattingPage from '../pages/ChattingPage';
 
 //스택 네비게이션 라이브러리가 제공하는 여러 기능이 담겨있는 객체를 사용하기 위해 상단에 선언하고 시작하는게 규칙!
 const Stack = createStackNavigator();
