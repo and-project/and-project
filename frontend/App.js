@@ -6,6 +6,7 @@ import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import MyPage from './src/component/pages/MyPage';
 import {Icon} from 'react-native-elements';
 import ChattingPage from './src/component/pages/ChattingPage';
+import ChattingRoom from './src/component/pages/ChattingRoom';
 
 
 export default function App() {
@@ -39,5 +40,6 @@ export default function App() {
     <StatusBar style="black" />
     </NavigationContainer>
  
-    );
+    )
+
   }

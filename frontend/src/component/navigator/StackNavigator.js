@@ -17,6 +17,7 @@ import Helper from '../pages/Helper';
 import VotPage from '../pages/VotPage';
 import VoteDetailsPage from '../pages/VoteDetailsPage';
 import ChattingPage from '../pages/ChattingPage';
+import ChattingRoom from '../pages/ChattingRoom';
 
 //스택 네비게이션 라이브러리가 제공하는 여러 기능이 담겨있는 객체를 사용하기 위해 상단에 선언하고 시작하는게 규칙!
 const Stack = createStackNavigator();
@@ -55,6 +56,7 @@ const StackNavigator = () =>{
             <Stack.Screen name='헬퍼' component={Helper}/>
             <Stack.Screen name='투표' component={VotPage}/>
             <Stack.Screen name='투표상세페이지' component={VoteDetailsPage}/>
+            <Stack.Screen name='채팅창' component={ChattingRoom}/>
 
 
 
